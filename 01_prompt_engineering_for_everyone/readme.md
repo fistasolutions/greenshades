@@ -33,7 +33,7 @@ https://console.anthropic.com/
 
 ## Prompt Coach"
 
-Here’s a reusable “Prompt Coach” prompt you can keep handy. You’ll paste this into ChatGPT (or any LLM), then just drop in your messy idea, and it will rewrite it into a polished, effective prompt for you:
+Here's a reusable "Prompt Coach" prompt you can keep handy. You'll paste this into ChatGPT (or any LLM), then just drop in your messy idea, and it will rewrite it into a polished, effective prompt for you:
 
 Copy Paste this in your LLM:
 
@@ -45,23 +45,101 @@ Your task is to:
 3. Structure it for best results
 4. Suggest 2–3 alternative versions (different styles: simple, detailed, structured)
 
-Here’s my rough prompt: [INSERT YOUR PROMPT HERE]
+Here's my rough prompt: [INSERT YOUR PROMPT HERE]
 ```
+
+## Getting Started with This Guide
+
+### What You'll Learn
+
+By the end of this comprehensive guide, you will be able to:
+
+- **Master Fundamentals:** Write effective prompts using zero-shot, one-shot, and few-shot techniques
+- **Apply Advanced Strategies:** Use Chain of Thought, ReAct, Tree of Thoughts, and other advanced methods
+- **Optimize for MoE Models:** Craft prompts that work effectively with Mixture-of-Experts architectures
+- **Debug and Improve:** Systematically troubleshoot and enhance prompts using evaluation frameworks
+- **Build a Library:** Create reusable prompt templates for common tasks
+- **Apply Best Practices:** Follow proven patterns for consistent, high-quality results
+
+### How to Use This Guide
+
+**For Beginners:**
+1. Start with "What is Prompt Engineering?" and work through sequentially
+2. Complete the interactive exercises after each section
+3. Practice with the provided examples
+4. Build your prompt library as you learn
+
+**For Intermediate Users:**
+1. Review "Fundamental Prompting Techniques" to refresh basics
+2. Focus on "Advanced Prompting Strategies" for new techniques
+3. Use "Prompt Templates Library" for quick reference
+4. Apply "Prompt Evaluation Framework" to improve your prompts
+
+**For Advanced Practitioners:**
+1. Deep dive into "MoE and Prompt Engineering" section
+2. Master the "6-Part Prompting Framework"
+3. Use "Troubleshooting Guide" for complex issues
+4. Contribute to and expand the templates library
+
+### Recommended Learning Path
+
+**Week 1: Foundations**
+- Day 1-2: What is Prompt Engineering? + Understanding LLMs
+- Day 3-4: Configuration Settings + Fundamental Techniques
+- Day 5-7: Practice exercises and build first prompts
+
+**Week 2: Advanced Techniques**
+- Day 1-3: Advanced Prompting Strategies (CoT, ReAct, ToT)
+- Day 4-5: Best Practices + Common Pitfalls
+- Day 6-7: Troubleshooting + Evaluation Framework
+
+**Week 3: Mastery & Application**
+- Day 1-2: MoE-specific prompting techniques
+- Day 3-4: 6-Part Framework mastery
+- Day 5-7: Build prompt library + real-world projects
+
+### Prerequisites
+
+**Required:**
+- Access to an AI tool (ChatGPT, Claude, Gemini, or similar)
+- Willingness to practice and experiment
+- Basic computer literacy
+
+**Helpful but Not Required:**
+- Basic understanding of AI/LLMs
+- Some experience with AI tools
+- Programming knowledge (for code generation sections)
+
+### Quick Start Checklist
+
+Before diving in, make sure you have:
+- [ ] Access to at least one AI tool (ChatGPT, Claude, or Gemini)
+- [ ] A notebook or document to save your prompts
+- [ ] 30-60 minutes for your first session
+- [ ] Clear learning goals (what do you want to achieve with prompt engineering?)
+
+**Ready to begin?** Start with the next section: "What is Prompt Engineering?"
+
+---
 
 ## Table of Contents
 
-1. [What is Prompt Engineering?](#what-is-prompt-engineering)
-2. [Understanding Large Language Models](#understanding-large-language-models)
-3. [Essential Configuration Settings](#essential-configuration-settings)
-4. [Fundamental Prompting Techniques](#fundamental-prompting-techniques)
-5. [Advanced Prompting Strategies](#advanced-prompting-strategies)
-6. [Best Practices for Effective Prompts](#best-practices-for-effective-prompts)
-7. [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
-8. [Hands-On Examples](#hands-on-examples)
-9. [Testing and Iteration](#testing-and-iteration)
-10. [Resources and Next Steps](#resources-and-next-steps)
-11. [Mixture-of-Experts (MoE) and Prompt Engineering](#mixture-of-experts-moe-and-prompt-engineering)
-12. [The 6-Part Prompting Framework](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/readme.md#the-6-part-prompting-framework)
+1. [Getting Started with This Guide](#getting-started-with-this-guide)
+2. [What is Prompt Engineering?](#what-is-prompt-engineering)
+3. [Understanding Large Language Models](#understanding-large-language-models)
+4. [Essential Configuration Settings](#essential-configuration-settings)
+5. [Fundamental Prompting Techniques](#fundamental-prompting-techniques)
+6. [Advanced Prompting Strategies](#advanced-prompting-strategies)
+7. [Best Practices for Effective Prompts](#best-practices-for-effective-prompts)
+8. [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+9. [Troubleshooting Guide: When Prompts Fail](#troubleshooting-guide-when-prompts-fail)
+10. [Hands-On Examples](#hands-on-examples)
+11. [Testing and Iteration](#testing-and-iteration)
+12. [Prompt Evaluation Framework](#prompt-evaluation-framework)
+13. [Prompt Templates Library](#prompt-templates-library)
+14. [Resources and Next Steps](#resources-and-next-steps)
+15. [Mixture-of-Experts (MoE) and Prompt Engineering](#mixture-of-experts-moe-and-prompt-engineering)
+16. [The 6-Part Prompting Framework](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/readme.md#the-6-part-prompting-framework)
 
 ## What is Prompt Engineering?
 
@@ -743,6 +821,211 @@ Context: This is for a {industry} company with {company_size} employees
 **Problem:** Assuming first attempt is optimal
 **Solution:** Test different phrasings, examples, and approaches
 
+## Troubleshooting Guide: When Prompts Fail
+
+### Problem 1: AI Gives Generic or Vague Responses
+
+**Symptoms:**
+- Responses lack specificity
+- Output doesn't match requirements
+- Too general or off-topic
+
+**Diagnosis:**
+- Prompt lacks context
+- No clear output format specified
+- Missing role or expertise definition
+
+**Solutions:**
+1. Add specific context (who, what, when, where, why)
+2. Define exact output format (JSON, table, list)
+3. Include role/expertise definition
+4. Add examples of desired output
+
+**Example Fix:**
+```
+Before: "Write about marketing"
+
+After: "As a senior marketing strategist with 10 years experience, write a 500-word article about B2B content marketing strategies for SaaS companies targeting CTOs. Format as: Introduction, 3 main strategies with examples, conclusion with actionable next steps."
+```
+
+---
+
+### Problem 2: AI Hallucinates or Makes Up Information
+
+**Symptoms:**
+- Factually incorrect information
+- Made-up statistics or quotes
+- Incorrect technical details
+
+**Solutions:**
+1. Add "Only use verified information" instruction
+2. Include "If uncertain, state 'I don't have that information'"
+3. Provide source material or context
+4. Use temperature 0 for factual tasks
+5. Add verification step in prompt
+
+**Example Fix:**
+```
+Before: "What are the latest AI trends?"
+
+After: "Based only on verified sources from 2024-2025, list the top 5 AI trends with specific examples. For each trend, include: (1) What it is, (2) Real companies implementing it, (3) Verified statistics. If you cannot verify a fact, state 'Information not verified' instead of guessing."
+```
+
+---
+
+### Problem 3: AI Ignores Instructions or Format Requirements
+
+**Symptoms:**
+- Output doesn't follow specified format
+- Missing required sections
+- Ignores constraints
+
+**Solutions:**
+1. Make format requirements more explicit
+2. Use structured output schemas (JSON, XML)
+3. Add "Strictly follow this format" instruction
+4. Provide format example in prompt
+5. Use numbered steps for complex formats
+
+**Example Fix:**
+```
+Before: "Analyze this data and give me insights"
+
+After: "Analyze the following data and provide insights in EXACTLY this JSON format:
+{
+  'summary': 'one sentence summary',
+  'key_insights': ['insight1', 'insight2', 'insight3'],
+  'recommendations': ['rec1', 'rec2'],
+  'confidence': 'high/medium/low'
+}
+Strictly follow this format. Do not add extra fields or change structure."
+```
+
+---
+
+### Problem 4: AI Produces Inconsistent Results
+
+**Symptoms:**
+- Different outputs for same prompt
+- Quality varies between runs
+- Unpredictable behavior
+
+**Solutions:**
+1. Lower temperature (0-0.3 for consistency)
+2. Add more specific constraints
+3. Use few-shot examples to establish pattern
+4. Specify seed value if available
+5. Add "Be consistent" instruction
+
+**Example Fix:**
+```
+Before: "Generate product names"
+
+After: "Generate 5 product names for a fitness app. Requirements:
+- Each name must be 1-2 words
+- Must convey energy and motivation
+- Must be brandable and memorable
+- Follow this pattern: [Adjective] + [Noun] (e.g., 'FitPulse', 'ActiveCore')
+Be consistent with this style across all 5 names."
+```
+
+---
+
+### Problem 5: AI Output is Too Long or Too Short
+
+**Symptoms:**
+- Responses exceed desired length
+- Responses are too brief
+- Can't control output size
+
+**Solutions:**
+1. Specify exact word/character count
+2. Use "Be concise" or "Be detailed" with examples
+3. Set max_tokens parameter
+4. Add length constraints in format section
+5. Provide example of desired length
+
+**Example Fix:**
+```
+Before: "Summarize this article"
+
+After: "Summarize this article in exactly 150 words. Structure as:
+- Opening sentence (15 words): Main point
+- Body (120 words): Key details
+- Closing sentence (15 words): Conclusion
+Count your words and ensure total is 150 words."
+```
+
+---
+
+### Problem 6: AI Doesn't Understand Context or Domain
+
+**Symptoms:**
+- Uses wrong terminology
+- Misses domain-specific nuances
+- Generic responses for specialized topics
+
+**Solutions:**
+1. Add domain-specific context upfront
+2. Define key terms and concepts
+3. Provide domain examples
+4. Use role-playing with domain expertise
+5. Include domain-specific constraints
+
+**Example Fix:**
+```
+Before: "Explain how to optimize a website"
+
+After: "As a senior SEO specialist with 15 years experience, explain technical SEO optimization for an e-commerce site. Context: Site has 10,000+ products, uses JavaScript rendering, and competes in competitive market. Focus on: (1) Core Web Vitals optimization, (2) Schema markup for products, (3) Internal linking strategy. Use SEO terminology correctly (e.g., canonical tags, hreflang, crawl budget)."
+```
+
+---
+
+### Problem 7: AI Repeats Information or Gets Stuck in Loops
+
+**Symptoms:**
+- Repeating same points
+- Circular reasoning
+- Can't move past initial response
+
+**Solutions:**
+1. Add "Avoid repetition" instruction
+2. Specify unique points or angles
+3. Use "Think step by step" for complex tasks
+4. Break into smaller sub-tasks
+5. Add "If you've covered a point, move to next" instruction
+
+**Example Fix:**
+```
+Before: "List benefits of remote work"
+
+After: "List 10 unique benefits of remote work. Requirements:
+- Each benefit must be distinct (no overlap)
+- Provide one specific example per benefit
+- Cover different categories: productivity, work-life balance, cost savings, diversity, etc.
+- If you find yourself repeating similar points, think of a different angle or category."
+```
+
+---
+
+### Quick Troubleshooting Checklist
+
+When your prompt isn't working, check:
+
+- [ ] Is the task clearly defined with action verbs?
+- [ ] Is there sufficient context (who, what, when, where, why)?
+- [ ] Is the output format explicitly specified?
+- [ ] Are there examples of desired output?
+- [ ] Is the role/expertise defined for specialized tasks?
+- [ ] Are constraints and requirements clear?
+- [ ] Is temperature set appropriately (0 for factual, 0.7 for creative)?
+- [ ] Have you tested with different phrasings?
+- [ ] Are you using the right technique (zero-shot vs few-shot vs CoT)?
+
+**Still stuck?** Try the Prompt Evaluation Framework in the next section to systematically improve your prompt.
+
+---
+
 ## Hands-On Examples
 
 ### Example 1: Content Creation
@@ -872,6 +1155,370 @@ Consider:
 - **Following instructions**: Adherence to specific requirements
 - **Creativity** (when desired): Novel and interesting responses
 - **Factual accuracy**: Correctness of information
+
+## Prompt Evaluation Framework
+
+### Quality Criteria Checklist
+
+Rate your prompt on each criterion (1-5 scale) to identify areas for improvement:
+
+#### 1. Clarity (1-5)
+- [ ] Clear action verb/command at the start
+- [ ] Specific task definition (not vague)
+- [ ] Unambiguous instructions
+- [ ] No confusing or contradictory statements
+- **Score:** ___/5
+
+#### 2. Context (1-5)
+- [ ] Sufficient background information provided
+- [ ] Relevant constraints included
+- [ ] Target audience defined
+- [ ] Domain/expertise context specified
+- [ ] Timeline or urgency indicated (if relevant)
+- **Score:** ___/5
+
+#### 3. Structure (1-5)
+- [ ] Well-organized format (sections, bullets, etc.)
+- [ ] Clear output specification
+- [ ] Logical flow from context to task
+- [ ] Easy to read and understand
+- [ ] Proper use of formatting (headers, lists, code blocks)
+- **Score:** ___/5
+
+#### 4. Completeness (1-5)
+- [ ] All necessary information included
+- [ ] Examples provided (when helpful)
+- [ ] Edge cases considered
+- [ ] Constraints and requirements clear
+- [ ] Nothing critical missing
+- **Score:** ___/5
+
+#### 5. Effectiveness (1-5)
+- [ ] Produces desired output consistently
+- [ ] Meets quality standards
+- [ ] Appropriate for target model
+- [ ] Tested and validated
+- [ ] Reusable for similar tasks
+- **Score:** ___/5
+
+**Total Score:** ___/25
+
+**Interpretation:**
+- **20-25:** Excellent prompt - production ready
+- **15-19:** Good prompt - minor improvements needed
+- **10-14:** Needs significant improvement - redesign recommended
+- **Below 10:** Poor prompt - start over with clearer requirements
+
+### Improvement Checklist
+
+After evaluation, use this checklist to systematically improve your prompt:
+
+**Clarity Improvements:**
+- [ ] Add clear action verb at the start
+- [ ] Remove ambiguous language
+- [ ] Simplify complex instructions
+- [ ] Break long sentences into shorter ones
+- [ ] Remove contradictory requirements
+
+**Context Enhancements:**
+- [ ] Add "who" (target audience, user persona)
+- [ ] Add "what" (specific task, goal)
+- [ ] Add "when" (timeline, deadlines)
+- [ ] Add "where" (context, environment)
+- [ ] Add "why" (purpose, motivation)
+
+**Structure Improvements:**
+- [ ] Organize into clear sections
+- [ ] Use formatting (headers, bullets, code blocks)
+- [ ] Add visual separators
+- [ ] Create logical flow
+- [ ] Make it scannable
+
+**Completeness Additions:**
+- [ ] Add examples of desired output
+- [ ] Include edge case handling
+- [ ] Specify all constraints
+- [ ] Add error handling instructions
+- [ ] Include validation criteria
+
+**Effectiveness Optimization:**
+- [ ] Test with target model
+- [ ] Compare multiple outputs
+- [ ] Adjust temperature if needed
+- [ ] Add few-shot examples if helpful
+- [ ] Iterate based on results
+
+### A/B Testing Framework
+
+Systematically test prompt variations:
+
+**Step 1: Create Variations**
+- Version A: Original prompt
+- Version B: Add more context
+- Version C: Change structure
+- Version D: Add examples
+
+**Step 2: Test Each Version**
+- Use same input data
+- Same model and settings
+- Same evaluation criteria
+- Run 3-5 times each
+
+**Step 3: Evaluate Results**
+- Compare outputs side-by-side
+- Score each on quality criteria
+- Identify best performing version
+- Document what worked
+
+**Step 4: Iterate**
+- Combine best elements
+- Create improved version
+- Test again
+- Repeat until satisfied
+
+### Prompt Performance Metrics
+
+Track these metrics to measure prompt effectiveness:
+
+**Accuracy:**
+- Correctness of information
+- Adherence to requirements
+- Factual accuracy (if applicable)
+
+**Consistency:**
+- Similar outputs across runs
+- Reliable performance
+- Predictable behavior
+
+**Completeness:**
+- All requirements met
+- Nothing missing
+- Full coverage of task
+
+**Relevance:**
+- On-topic responses
+- Appropriate for context
+- Useful for intended purpose
+
+**Efficiency:**
+- Token usage
+- Response time
+- Cost-effectiveness
+
+## Prompt Templates Library
+
+### Content Creation Templates
+
+#### Blog Post Template
+```
+Role: You are an expert content writer specializing in [topic] for [audience].
+
+Task: Write a comprehensive blog post about [specific topic].
+
+Context:
+- Target audience: [describe audience - demographics, interests, knowledge level]
+- Tone: [professional/casual/technical/conversational]
+- Length: [word count - e.g., 800-1000 words]
+- Key points to cover: [list 3-5 main points]
+- SEO keywords: [if applicable]
+- Call-to-action: [desired CTA]
+
+Format:
+- Engaging headline (under 60 characters)
+- Compelling introduction hook
+- Main content with clear subheadings (H2, H3)
+- Conclusion with call-to-action
+- 5-7 relevant hashtags
+
+Output: Complete blog post ready for publication with proper formatting.
+```
+
+#### Social Media Post Template
+```
+Role: You are a social media strategist for [platform - Instagram/Twitter/LinkedIn].
+
+Task: Create an engaging social media post about [topic].
+
+Context:
+- Platform: [Instagram/Twitter/LinkedIn/Facebook]
+- Audience: [target audience description]
+- Goal: [awareness/engagement/sales/education]
+- Brand voice: [tone and style]
+- Hashtags needed: [yes/no, how many]
+
+Format:
+- Hook (first line that grabs attention)
+- Main message (clear, concise)
+- Call-to-action
+- Relevant hashtags (platform-appropriate number)
+
+Output: Platform-optimized post ready to publish.
+```
+
+#### Email Template
+```
+Role: You are a professional email copywriter specializing in [type - marketing/sales/transactional].
+
+Task: Write an email about [subject].
+
+Context:
+- Purpose: [inform/persuade/update/request]
+- Recipient: [audience description]
+- Tone: [professional/friendly/urgent]
+- Length: [brief/medium/detailed]
+- Key message: [main point to convey]
+- Desired action: [what should recipient do?]
+
+Format:
+- Subject line (compelling, under 50 characters)
+- Greeting (personalized if possible)
+- Opening (hook or context)
+- Body (main message, clear and scannable)
+- Closing (call-to-action)
+- Signature (if applicable)
+
+Output: Complete email ready to send.
+```
+
+### Data Analysis Templates
+
+#### Data Summary Template
+```
+Role: You are a data analyst with expertise in [domain - e.g., marketing, finance, operations].
+
+Task: Analyze the following data and provide insights.
+
+Data:
+[Paste or describe your data here]
+
+Context:
+- Data source: [where data comes from]
+- Time period: [date range]
+- Key metrics: [what to focus on]
+- Business goal: [what decision needs to be made]
+
+Format:
+Return analysis as JSON:
+{
+  "summary": "one-sentence overview",
+  "key_findings": ["finding1", "finding2", "finding3"],
+  "trends": ["trend1", "trend2"],
+  "anomalies": ["anomaly1", "anomaly2"],
+  "recommendations": [
+    {
+      "action": "specific action",
+      "priority": "high/medium/low",
+      "expected_impact": "description"
+    }
+  ],
+  "confidence": "high/medium/low"
+}
+
+Output: Structured analysis ready for decision-making.
+```
+
+### Code Generation Templates
+
+#### Function Generation Template
+```
+Role: You are a senior software engineer specializing in [language/framework].
+
+Task: Write a [function/class/module] that [specific functionality].
+
+Requirements:
+- Language: [Python/JavaScript/Java/etc.]
+- Framework: [if applicable]
+- Input: [describe inputs]
+- Output: [describe expected output]
+- Edge cases: [handle these cases]
+- Performance: [any performance requirements]
+- Dependencies: [allowed libraries]
+
+Format:
+- Function signature with type hints
+- Comprehensive docstring
+- Implementation with comments
+- Error handling
+- Example usage
+- Brief explanation
+
+Output: Production-ready code with documentation.
+```
+
+### Problem-Solving Templates
+
+#### Problem Analysis Template
+```
+Role: You are a [domain] expert and problem-solving consultant.
+
+Task: Analyze this problem and provide a solution framework.
+
+Problem:
+[Describe the problem in detail]
+
+Context:
+- Domain: [business/technical/personal/etc.]
+- Constraints: [limitations, resources, timeline]
+- Stakeholders: [who is affected]
+- Success criteria: [how to measure success]
+
+Format:
+1. Problem Statement (clear, concise)
+2. Root Cause Analysis
+3. Impact Assessment
+4. Solution Options (list 3-5 with pros/cons)
+5. Recommended Solution (with rationale)
+6. Implementation Plan (step-by-step)
+7. Risk Mitigation
+8. Success Metrics
+
+Output: Comprehensive problem-solving analysis.
+```
+
+### Business Templates
+
+#### Product Requirements Document (PRD) Template
+```
+Role: You are a senior product manager creating a PRD.
+
+Task: Create a comprehensive PRD for [product/feature].
+
+Context:
+- Product: [product name and description]
+- Target users: [user personas]
+- Business goals: [what this achieves]
+- Success metrics: [how to measure success]
+- Timeline: [development timeline]
+
+Format:
+1. Executive Summary
+2. Problem Statement
+3. User Stories
+4. Requirements (Functional & Non-functional)
+5. User Experience Flow
+6. Technical Considerations
+7. Success Metrics
+8. Timeline & Milestones
+9. Risks & Mitigation
+
+Output: Complete PRD ready for stakeholder review.
+```
+
+### Customization Tips
+
+**To customize any template:**
+1. Replace bracketed placeholders `[like this]` with your specific information
+2. Adjust format sections to match your needs
+3. Add or remove sections as appropriate
+4. Modify tone and style for your audience
+5. Test and iterate based on results
+
+**Best Practices:**
+- Save your customized templates for reuse
+- Create variations for different scenarios
+- Document what works best for your use cases
+- Share successful templates with your team
+- Continuously improve based on results
 
 ## Advanced Tips for 2025
 
