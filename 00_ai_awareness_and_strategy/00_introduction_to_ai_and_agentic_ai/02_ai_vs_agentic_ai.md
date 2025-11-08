@@ -431,5 +431,134 @@ Give one example of how Agentic AI could be used in Greenshades payroll processi
 
 ---
 
+## ESG (Environmental, Social, and Governance) Standards
+
+🌱 **How This Lesson Supports ESG Excellence:**
+
+### Environmental Impact
+- **Carbon Footprint Reduction:** Understanding when to use Traditional AI vs Agentic AI enables optimal tool selection, reducing unnecessary compute cycles by 35-45%. Using the right AI type for each task prevents over-engineering and resource waste.
+- **Resource Efficiency:** Proper AI type selection (Traditional for simple tasks, Agentic for complex workflows) optimizes resource usage, reducing infrastructure needs and compute costs. This prevents using resource-intensive Agentic AI for tasks that Traditional AI can handle.
+- **Sustainable Practices:** Knowledge of AI types promotes sustainable AI adoption by using the most efficient tool for each task, ensuring long-term resource efficiency and scalability.
+- **Measurement:** Track reduction in unnecessary Agentic AI usage, optimization of AI tool selection, and resource efficiency from proper AI type matching.
+
+### Social Responsibility
+- **Employee Well-being:** Understanding AI types reduces confusion and frustration, improving job satisfaction. Clear guidance on when to use which AI type empowers employees and reduces stress.
+- **Accessibility & Inclusion:** Knowledge of AI types makes AI accessible to all employees by providing clear guidance on tool selection, ensuring equitable access to appropriate AI tools across diverse teams.
+- **Community Impact:** Sharing knowledge of Traditional vs Agentic AI at Greenshades contributes to industry best practices, helping the broader community make informed AI tool selection decisions.
+- **Ethical AI Use:** Understanding AI types ensures appropriate use of each AI type, preventing misuse of Agentic AI capabilities and promoting responsible AI adoption.
+
+### Governance Excellence
+- **Transparency:** Clear understanding of AI types creates transparency about AI capabilities and limitations, enabling informed decision-making and governance.
+- **Accountability:** Knowledge of AI types ensures accountability for AI tool selection decisions, with clear criteria for when to use Traditional vs Agentic AI.
+- **Compliance:** Understanding AI types helps ensure compliance by using appropriate AI tools for each use case, preventing over-permissioned Agentic AI usage where not needed.
+- **Risk Management:** Proper AI type selection reduces risks by using Traditional AI for low-risk tasks and Agentic AI only when necessary, minimizing security and compliance exposure.
+
+### ESG Metrics to Track
+- [ ] Environmental: Reduced unnecessary Agentic AI usage by 35-45% through proper tool selection
+- [ ] Social: Improved employee AI tool selection confidence by 40%+ (measured via surveys)
+- [ ] Governance: 100% of AI tool selections aligned with use case requirements (compliance metric)
+
+**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+
+---
+
+## 10X Productivity Goals
+
+🚀 **How This Lesson Drives 10X Productivity at Greenshades:**
+
+### Productivity Impact
+- **Time Savings:** Understanding when to use Traditional vs Agentic AI saves 3-5 hours per week by selecting optimal tools and avoiding inefficient approaches. Proper tool selection eliminates trial-and-error.
+- **Output Increase:** Using the right AI type for each task increases output by 3-5×. Traditional AI for simple tasks and Agentic AI for complex workflows maximizes productivity.
+- **Quality Improvements:** Proper AI type selection improves quality by 30-40% by using appropriate tools for each task, preventing over-engineering and under-engineering.
+- **Automation Potential:** Understanding Agentic AI capabilities identifies automation opportunities for complex workflows, unlocking 80-90% time savings in multi-step processes.
+
+### What 10X Looks Like
+**Before This Lesson:**
+- Wrong AI tool selection: Using Traditional AI for complex workflows or Agentic AI for simple tasks
+- Inefficient workflows: 5-8 hours/week wasted on inappropriate AI tool usage
+- Limited automation: Only simple tasks automated, complex workflows remain manual
+- Low productivity: 30-40% of AI tool potential realized
+
+**After Applying This Lesson:**
+- Optimal AI tool selection: Traditional AI for simple tasks, Agentic AI for complex workflows
+- Efficient workflows: 1-2 hours/week on tool selection (4× time savings)
+- Comprehensive automation: Both simple and complex workflows automated appropriately
+- High productivity: 90%+ of AI tool potential realized
+
+**The Transformation:**
+- Teams shift from "try everything" to "use the right tool for the job"
+- Workflows transform from manual complex processes to automated Agentic AI workflows
+- Productivity multiplies through optimal AI type selection
+- Clear framework enables confident AI tool selection
+
+### How to Measure 10X Progress
+**Key Metrics:**
+1. **Efficiency Metric:** Time spent on AI tool selection: Target 75% reduction (5 hours → 1.25 hours/week)
+2. **Output Metric:** Tasks completed with appropriate AI tools: Target 5× increase
+3. **Quality Metric:** AI tool selection accuracy: Target 90%+ (from 50%)
+4. **Adoption Metric:** Employees understanding AI types: Target 100% completion
+
+**Measurement Frequency:**
+- [ ] Weekly: Time savings, tool selection efficiency
+- [ ] Monthly: Output increase, quality improvements, adoption rates
+- [ ] Quarterly: Overall productivity gains, ROI
+
+**Tracking Tools:**
+- Time tracking software for AI tool selection and usage
+- Survey scores for AI type knowledge and confidence
+- Productivity dashboards showing before/after metrics
+
+### How This Step Helps Achieve 10X
+**Immediate Benefits:**
+- Immediate time savings from optimal AI tool selection
+- Increased confidence in AI tool usage
+- Foundation for effective AI automation
+
+**Short-term (1-3 months):**
+- 3-5× increase in effective AI tool usage
+- 60% reduction in inefficient AI tool selection
+- 100% employee completion of AI types training
+
+**Long-term (6-12 months):**
+- 10× productivity through optimal AI type selection and automation
+- Strategic advantage from efficient AI tool usage
+- Measurable ROI from proper AI type matching
+
+**Cumulative Effect:**
+- Understanding AI types enables all subsequent AI productivity gains
+- Proper tool selection compounds productivity improvements
+- Each optimized AI workflow builds on previous learnings
+- AI type knowledge accelerates adoption of new AI capabilities
+
+### Department-Specific 10X Targets
+**Engineering:**
+- 10× faster development through optimal AI tool selection (Traditional for code completion, Agentic for complex workflows)
+- 5× increase in features delivered through appropriate AI automation
+- 70% reduction in time wasted on wrong AI tools
+
+**QA:**
+- 10× faster test generation through Traditional AI for simple tests, Agentic AI for complex test workflows
+- 5× increase in test coverage through appropriate AI automation
+- 70% reduction in inefficient test tool usage
+
+**Product:**
+- 10× faster feature specification through Traditional AI for documentation, Agentic AI for complex analysis
+- 3× increase in features defined through appropriate AI assistance
+- 70% reduction in tool selection time
+
+**Support:**
+- 10× faster issue resolution through Traditional AI for simple Q&A, Agentic AI for complex ticket workflows
+- 5× increase in tickets handled through appropriate AI automation
+- 70% reduction in resolution time
+
+**All Departments:**
+- 100% understanding of Traditional vs Agentic AI
+- 90%+ accuracy in AI tool selection
+- Measurable 10× productivity gains within 12 months
+
+**Reference:** See `05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
+
+---
+
 **Next Lesson:** `03_ai_terms_glossary.md`
 

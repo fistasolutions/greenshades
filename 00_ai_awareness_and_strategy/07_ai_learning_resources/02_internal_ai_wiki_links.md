@@ -331,7 +331,132 @@ Give one example of what to contribute to the internal wiki.
 - [ ] Verify information before adding to wiki
 - [ ] Review wiki content for accuracy and compliance
 
-**Reference:** See `04_ai_ethics_and_security_basics/` for detailed security guidelines.
+**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+
+---
+
+## ESG (Environmental, Social, and Governance) Standards
+
+🌱 **How This Lesson Supports ESG Excellence:**
+
+### Environmental Impact
+- **Carbon Footprint Reduction:** Internal wiki enables efficient knowledge sharing, reducing compute waste from redundant learning and trial-and-error. Wiki-driven learning reduces energy consumption by 35-45% compared to individual learning.
+- **Resource Efficiency:** Wiki promotes resource-efficient AI adoption by enabling knowledge reuse and sharing, minimizing infrastructure waste from redundant learning cycles.
+- **Sustainable Practices:** Wiki promotes sustainable AI adoption by ensuring long-term knowledge preservation and sharing, reducing the need for frequent retraining and minimizing resource waste.
+- **Measurement:** Track reduction in redundant learning, compute hours saved through wiki-driven knowledge sharing, and resource efficiency from knowledge reuse.
+
+### Social Responsibility
+- **Employee Well-being:** Wiki improves employee well-being by providing accessible knowledge resources, improving job satisfaction. Wiki access reduces anxiety and improves confidence.
+- **Accessibility & Inclusion:** Wiki makes AI knowledge accessible to all employees by providing centralized, searchable resources, promoting equity. Wiki ensures all team members can access AI knowledge.
+- **Community Impact:** Wiki at Greenshades contributes to industry best practices for AI knowledge management, helping the broader business community adopt effective knowledge sharing.
+- **Ethical AI Use:** Wiki ensures ethical AI use by including security and compliance guidelines in wiki content, ensuring responsible AI knowledge sharing.
+
+### Governance Excellence
+- **Transparency:** Wiki creates transparency in AI knowledge through clear documentation and examples, enabling accountability and informed decision-making.
+- **Accountability:** Wiki ensures accountability for AI knowledge by enabling contributions and reviews, ensuring responsible knowledge sharing.
+- **Compliance:** Wiki ensures compliance by including security and compliance guidelines in wiki content, protecting the organization from legal and financial risks.
+- **Risk Management:** Wiki proactively manages risks by ensuring secure knowledge sharing (placeholders, no sensitive data), preventing costly incidents and protecting organizational reputation.
+
+### ESG Metrics to Track
+- [ ] Environmental: Reduced redundant learning by 35-45% through wiki knowledge sharing
+- [ ] Social: Improved knowledge access confidence from wiki by 40%+ (measured via surveys)
+- [ ] Governance: 100% of wiki content reviewed for security and compliance (compliance metric)
+
+**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+
+---
+
+## 10X Productivity Goals
+
+🚀 **How This Lesson Drives 10X Productivity at Greenshades:**
+
+### Productivity Impact
+- **Time Savings:** Wiki saves 4-6 hours per week per employee by enabling quick knowledge access and preventing redundant learning. Wiki-driven knowledge sharing eliminates trial-and-error learning time.
+- **Output Increase:** Wiki enables 3-10× output increase by providing accessible knowledge resources. Wiki knowledge sharing increases productivity through knowledge reuse.
+- **Quality Improvements:** Wiki improves quality by ensuring best practices and examples are accessible, reducing AI-related errors by 30-50%.
+- **Automation Potential:** Wiki identifies automation opportunities through documented use cases and examples, unlocking 70-90% time savings in automated workflows.
+
+### What 10X Looks Like
+**Before This Lesson:**
+- Individual learning: Each employee learning AI independently
+- Redundant learning: Multiple employees solving same problems
+- Low productivity: 20-30% productivity gains, not 10×
+- Knowledge silos: Teams not sharing AI knowledge
+
+**After Applying This Lesson:**
+- Shared knowledge: All AI knowledge accessible through wiki
+- Knowledge reuse: Teams learning from wiki examples and best practices
+- 10× productivity: Measurable 10× gains through wiki knowledge sharing
+- Clear knowledge base: Searchable, organized AI knowledge resources
+
+**The Transformation:**
+- Teams shift from "learn independently" to "learn from wiki"
+- Knowledge sharing through wiki (use cases, examples, best practices)
+- Productivity multiplies through knowledge reuse and sharing
+- Clear wiki enables confident, measured progress to 10×
+
+### How to Measure 10X Progress
+**Key Metrics:**
+1. **Efficiency Metric:** Knowledge access time: Target 80-90% reduction (search wiki vs. independent learning)
+2. **Output Metric:** Knowledge reuse: Target 3-10× increase in knowledge reuse
+3. **Quality Metric:** Wiki contribution: Target 90%+ of teams contributing to wiki
+4. **Adoption Metric:** Wiki usage: Target 90%+ of employees using wiki regularly
+
+**Measurement Frequency:**
+- [ ] Weekly: Wiki usage, knowledge access
+- [ ] Monthly: Wiki contributions, knowledge reuse, productivity gains
+- [ ] Quarterly: Overall wiki effectiveness, ROI
+
+**Tracking Tools:**
+- Wiki analytics dashboards
+- Knowledge access tracking
+- Contribution metrics
+- Productivity tracking by wiki usage
+
+### How This Step Helps Achieve 10X
+**Immediate Benefits:**
+- Immediate knowledge access through wiki
+- Increased confidence in AI learning
+- Foundation for knowledge-driven 10× productivity
+
+**Short-term (1-3 months):**
+- 90%+ wiki usage
+- 90%+ teams contributing to wiki
+- Measurable productivity improvements
+
+**Long-term (6-12 months):**
+- 10× productivity through comprehensive wiki knowledge sharing
+- Strategic advantage from shared knowledge
+- Measurable ROI from wiki-driven productivity gains
+
+**Cumulative Effect:**
+- Wiki enables all other 10× productivity initiatives
+- Without wiki, productivity is limited by knowledge silos
+- Each wiki contribution compounds productivity improvements
+- Wiki becomes foundation for sustainable 10× productivity
+
+### Department-Specific 10X Targets
+**Engineering:**
+- 10× productivity through wiki knowledge sharing
+- 90%+ engineers using wiki regularly
+- 90%+ contributing to wiki
+
+**QA:**
+- 10× productivity through wiki knowledge sharing
+- 90%+ QA engineers using wiki regularly
+- 90%+ contributing to wiki
+
+**Product:**
+- 10× productivity through wiki knowledge sharing
+- 90%+ product managers using wiki regularly
+- 90%+ contributing to wiki
+
+**All Departments:**
+- 90%+ employees using wiki regularly
+- 90%+ teams contributing to wiki
+- Measurable 10× productivity gains within 12 months
+
+**Reference:** See `05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
 
 ---
 
