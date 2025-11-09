@@ -176,20 +176,20 @@ Prompt engineering is the art and science of crafting instructions that guide AI
 
 ### Concrete examples
 
-1. **Invoice → JSON extractor**
+1. **W-2 Form → JSON extractor**
 
-* *Prompt engineering*: “Extract fields {vendor, date, total}. Return JSON only. If a field is missing, use null.”
-* *Context engineering*: Provide a few labeled examples and attach the vendor’s invoice spec retrieved via embeddings.
+* *Prompt engineering*: "Extract fields {employee_name, employee_id, gross_pay, federal_tax, state_tax, year}. Return JSON only. If a field is missing, use null."
+* *Context engineering*: Provide a few labeled examples of W-2 forms and attach the W-2 form specification retrieved via embeddings.
 
-2. **Policy Q\&A bot**
+2. **Payroll Policy Q\&A bot**
 
-* *Prompt engineering*: “Answer using the attached passages; if unsure, say ‘Not in policy.’ Cite section IDs.”
-* *Context engineering*: RAG over your policy repo (chunking, metadata filters like `department=HR`, freshness boosts), plus a recency cache for updates.
+* *Prompt engineering*: "Answer using the attached payroll policy passages; if unsure, say 'Not in policy.' Cite section IDs."
+* *Context engineering*: RAG over your payroll policy repo (chunking, metadata filters like `department=Payroll`, freshness boosts), plus a recency cache for policy updates.
 
-3. **Agentic workflow**
+3. **Payroll Processing Agentic workflow**
 
-* *Prompt engineering*: Tool-use instructions and function signatures.
-* *Context engineering*: Feed tool responses (DB rows, API payloads) back into the context window each step; maintain short-term memory/state.
+* *Prompt engineering*: Tool-use instructions and function signatures for payroll calculations.
+* *Context engineering*: Feed tool responses (employee data rows, tax calculation API payloads) back into the context window each step; maintain short-term memory/state for the payroll run.
 
 ### Practical tips
 
@@ -290,20 +290,20 @@ The simplest approach—just ask directly without examples.
 
 **Example 1:**
 ```
-Classify this movie review as positive, negative, or neutral:
-"The film was visually stunning but the plot felt rushed."
+Classify this payroll transaction as valid, anomaly, or requires review:
+"Employee ID 12345: Gross pay $15,000 for bi-weekly period, 160 hours logged, but pay rate shows $50/hour (expected $75/hour)."
 ```
 
 **Example 2:**
 ```
-Classify this restaurant review as positive, negative, or neutral:
-"The service was excellent and the food was delicious, but the prices were quite high."
+Classify this support ticket as urgent, normal, or low priority:
+"Employee cannot access their W-2 form in Avocado. Payroll was processed successfully last week, but they need the form for tax filing deadline tomorrow."
 ```
 
 **Example 3:**
 ```
-Classify this product review as positive, negative, or neutral:
-"The smartphone has great battery life and camera quality, however the screen is too small for my needs."
+Classify this tax code classification as correct, incorrect, or needs verification:
+"Transaction: 'Quarterly bonus payment' classified as tax code 'W-2 Wages' for employee in California. Amount: $5,000. Employee type: Full-time exempt."
 ```
 
 **When to use:**
@@ -317,38 +317,38 @@ Provide a single example to guide the response format.
 
 **Example 1:**
 ```
-Translate English to French:
+Classify payroll transactions into tax codes:
 
-English: "Hello, how are you?"
-French: "Bonjour, comment allez-vous?"
+Transaction: "Regular bi-weekly salary payment for employee"
+Tax Code: "W-2 Wages - Regular"
 
-English: "Where is the library?"
-French:
+Transaction: "Overtime payment for hours worked beyond 40 hours"
+Tax Code:
 ```
 
 **Example 2:**
 ```
-Generate Python code for a function:
+Generate Python code for payroll calculations:
 
-Task: "Create a function that calculates the factorial of a number"
+Task: "Create a function that calculates gross pay from hours and rate"
 Code: 
-def factorial(n):
-    if n <= 1:
-        return 1
-    return n * factorial(n - 1)
+def calculate_gross_pay(hours, rate):
+    if hours <= 40:
+        return hours * rate
+    return (40 * rate) + ((hours - 40) * rate * 1.5)
 
-Task: "Create a function that reverses a string"
+Task: "Create a function that calculates net pay after deductions"
 Code:
 ```
 
 **Example 3:**
 ```
-Summarize customer emails:
+Summarize support tickets:
 
-Email: "Hi, I'm having trouble logging into my account. I've tried resetting my password multiple times but haven't received any emails. Can you please help me resolve this issue? Thanks!"
-Summary: "Customer experiencing login issues and password reset problems"
+Ticket: "Hi, I'm having trouble accessing my payroll information in Avocado. I've tried resetting my password multiple times but haven't received any reset emails. Can you please help me resolve this issue? I need to check my pay stub before the end of the week. Thanks!"
+Summary: "Employee experiencing login issues and password reset problems in Avocado, needs access to pay stub"
 
-Email: "I love your new product features! The interface is much cleaner and the performance is noticeably faster. Keep up the great work!"
+Ticket: "The new payroll processing feature is amazing! The interface is much cleaner and payroll runs are completing noticeably faster. Our team can process 1000+ employees in half the time. Keep up the great work!"
 Summary:
 ```
 
@@ -358,44 +358,44 @@ Provide multiple examples to establish a clear pattern.
 
 **Example 1:**
 ```
-Convert customer feedback to structured data:
+Convert support ticket feedback to structured data:
 
-Feedback: "Great service, but food was cold"
-JSON: {"service": "positive", "food": "negative", "overall": "mixed"}
+Feedback: "Payroll processed quickly, but tax calculation seems incorrect"
+JSON: {"payroll_processing": "positive", "tax_calculation": "negative", "overall": "mixed"}
 
-Feedback: "Amazing experience, will definitely return"
-JSON: {"service": "positive", "food": "positive", "overall": "positive"}
+Feedback: "Excellent service, payroll runs are fast and accurate"
+JSON: {"payroll_processing": "positive", "tax_calculation": "positive", "overall": "positive"}
 
-Feedback: "Terrible food and rude staff"
+Feedback: "Tax filing errors and slow response times"
 JSON:
 ```
 
 **Example 2:**
 ```
-Categorize products by type and price range:
+Categorize payroll transactions by type and tax code:
 
-Product: "Wireless Bluetooth headphones with noise cancellation"
-Category: {"type": "electronics", "price_range": "mid-range"}
+Transaction: "Regular bi-weekly salary payment for full-time employee"
+Category: {"type": "regular_wages", "tax_code": "W-2 Wages"}
 
-Product: "Organic cotton t-shirt, handmade in Peru"
-Category: {"type": "clothing", "price_range": "premium"}
+Transaction: "Quarterly performance bonus payment"
+Category: {"type": "bonus", "tax_code": "W-2 Supplemental Wages"}
 
-Product: "Stainless steel water bottle, 32oz capacity"
+Transaction: "Reimbursement for business travel expenses"
 Category:
 ```
 
 **Example 3:**
 ```
-Analyze social media posts for engagement prediction:
+Analyze payroll support tickets for priority classification:
 
-Post: "Just finished my morning run! Feeling energized and ready to tackle the day 💪 #fitness #motivation"
-Engagement: {"sentiment": "positive", "hashtags": 2, "predicted_likes": "high"}
+Ticket: "Payroll processed successfully! All employees received correct pay and tax deductions. Great job team! 🎉"
+Priority: {"sentiment": "positive", "urgency": "low", "category": "feedback", "action_required": "none"}
 
-Post: "Another rainy day in Seattle... when will this end? 😔"
-Engagement: {"sentiment": "negative", "hashtags": 0, "predicted_likes": "low"}
+Ticket: "URGENT: Payroll failed for 500 employees. Payday is tomorrow and employees are concerned about missing payments. Need immediate resolution!"
+Priority: {"sentiment": "negative", "urgency": "critical", "category": "system_error", "action_required": "immediate"}
 
-Post: "Check out this amazing sunset from my hike today! Nature never fails to amaze me 🌅"
-Engagement:
+Ticket: "Employee asking about tax withholding changes for next pay period. Not urgent but would like response this week."
+Priority:
 ```
 
 **Best practices:**
@@ -410,35 +410,35 @@ Set overall context and behavior guidelines.
 
 **Example 1:**
 ```
-You are a helpful travel guide. Provide practical, accurate information about destinations. Always include:
-- Key attractions
-- Local customs to be aware of
-- Budget considerations
-- Best time to visit
+You are a payroll analyst at Greenshades. Provide accurate, compliant payroll processing guidance. Always include:
+- Tax code classification
+- Compliance requirements
+- Processing timelines
+- Error prevention steps
 
-User: Tell me about visiting Tokyo.
+User: How do I process payroll for employees in multiple states?
 ```
 
 **Example 2:**
 ```
-You are a certified fitness coach. Provide personalized workout and nutrition advice. Always include:
-- Exercise recommendations based on fitness level
-- Proper form and safety considerations
-- Nutrition guidelines
-- Recovery and rest recommendations
+You are a tax compliance specialist at Greenshades. Provide accurate tax calculation and compliance advice. Always include:
+- Federal, state, and local tax requirements
+- Tax code classification guidelines
+- Compliance deadlines
+- Error detection and correction steps
 
-User: I'm a beginner who wants to start strength training.
+User: How do I handle tax calculations for employees working remotely in different states?
 ```
 
 **Example 3:**
 ```
-You are a licensed financial advisor. Provide sound investment and financial planning guidance. Always include:
-- Risk assessment and tolerance
-- Diversification strategies
-- Long-term vs short-term considerations
-- Tax implications and fees
+You are a senior support engineer at Greenshades. Provide technical support for Avocado platform issues. Always include:
+- Root cause analysis
+- Step-by-step resolution steps
+- Prevention strategies
+- Escalation criteria if needed
 
-User: I'm 25 years old and want to start investing for retirement.
+User: Employees are reporting that they cannot access their pay stubs in Avocado.
 ```
 
 ### 5. Role Prompting
@@ -447,17 +447,17 @@ Assign a specific character or expertise to the AI.
 
 **Example 1:**
 ```
-Act as an experienced software architect. I need help designing a scalable web application for 1 million users. What architecture patterns should I consider?
+Act as an experienced payroll system architect at Greenshades. I need help designing a scalable payroll processing system for 1 million employees. What architecture patterns should I consider for handling concurrent payroll runs?
 ```
 
 **Example 2:**
 ```
-Act as a senior marketing strategist with 15 years of experience in digital marketing. I'm launching a new eco-friendly skincare brand targeting millennials. What marketing channels and strategies should I prioritize for the first 6 months?
+Act as a senior tax compliance specialist with 15 years of experience in payroll tax processing. I'm implementing a new tax calculation engine for multi-state employees. What tax compliance requirements and strategies should I prioritize for federal, state, and local tax calculations?
 ```
 
 **Example 3:**
 ```
-Act as a medical researcher specializing in cardiovascular health. I'm conducting a study on the effects of intermittent fasting on heart disease risk factors. What key biomarkers should I measure and what potential confounding variables should I control for?
+Act as a QA engineer specializing in payroll validation at Greenshades. I'm testing the new Avocado payroll processing feature. What key validation checks should I perform and what edge cases should I test for payroll calculations?
 ```
 
 **Effective roles:**
@@ -472,23 +472,23 @@ Provide specific background information relevant to the task.
 
 **Example 1:**
 ```
-Context: You're writing for a tech blog aimed at beginners who have never coded before.
+Context: You're writing documentation for payroll administrators who are new to the Avocado platform.
 
-Write a 200-word explanation of what an API is, using simple language and practical examples.
+Write a 200-word explanation of how payroll processing works in Avocado, using simple language and practical examples from actual payroll runs.
 ```
 
 **Example 2:**
 ```
-Context: You're writing a research paper for a peer-reviewed academic journal in environmental science.
+Context: You're writing a technical specification document for the engineering team implementing a new tax calculation feature.
 
-Write a 300-word abstract summarizing the methodology and findings of a study on urban heat island effects in major cities, including statistical significance and implications for climate policy.
+Write a 300-word summary explaining the methodology and requirements for multi-state tax calculations, including compliance requirements, calculation logic, and edge cases that must be handled.
 ```
 
 **Example 3:**
 ```
-Context: You're presenting to C-level executives at a Fortune 500 company who need to make budget decisions for next quarter.
+Context: You're presenting to C-level executives at Greenshades who need to make budget decisions for next quarter's AI initiatives.
 
-Write a 150-word executive summary explaining the ROI of implementing AI-powered customer service chatbots, focusing on cost savings, efficiency gains, and competitive advantages.
+Write a 150-word executive summary explaining the ROI of implementing AI-powered payroll anomaly detection, focusing on cost savings from reduced manual review, efficiency gains in payroll processing, and competitive advantages in accuracy.
 ```
 
 ## Advanced Prompting Strategies
@@ -501,24 +501,24 @@ Encourage step-by-step reasoning for complex problems.
 
 **Example 1:**
 ```
-Solve this step by step:
-If I was 6 when my sister was half my age, how old is my sister when I'm 40?
+Calculate this payroll scenario step by step:
+An employee works 45 hours in a week at $30/hour. Overtime is paid at 1.5x for hours over 40. Calculate gross pay, federal tax (15%), state tax (5%), and net pay.
 
 Let me think through this step by step:
 ```
 
 **Example 2:**
 ```
-Analyze this business scenario step by step:
-A company's revenue increased by 25% this quarter, but their profit margin decreased from 15% to 12%. Their customer acquisition cost went up by 30%, but customer lifetime value only increased by 10%. What are the likely causes and what should they investigate?
+Analyze this payroll processing scenario step by step:
+A payroll run processed 1,000 employees successfully, but 50 employees have tax calculation errors. The error rate increased from 2% to 5% this pay period. Processing time increased by 30%, but the number of employees only increased by 10%. What are the likely causes and what should we investigate?
 
 Let me break this down systematically:
 ```
 
 **Example 3:**
 ```
-Solve this scientific problem step by step:
-A scientist is studying the effect of temperature on enzyme activity. At 20°C, the enzyme shows 80% activity. At 30°C, it shows 95% activity. At 40°C, it shows 60% activity. At 50°C, it shows 20% activity. What is happening and why?
+Analyze this tax calculation problem step by step:
+An employee's payroll shows: Regular hours: 40 at $50/hr, Overtime: 10 hours at $75/hr, Federal tax rate: 22%, State tax rate: 6%, Local tax rate: 2%. The system calculated gross pay as $2,750, but the net pay seems incorrect. What is the correct calculation and where might the error be?
 
 Let me analyze this data systematically:
 ```
@@ -545,51 +545,51 @@ Generate multiple reasoning paths and select the most common answer.
 
 **Example 1:**
 ```
-Question: If a store offers a 20% discount on a $50 item, what is the final price?
+Question: If an employee's gross pay is $5,000 and federal tax rate is 22%, what is the federal tax amount and net pay?
 
 Generate 3 different reasoning paths for this question and select the most consistent answer.
 
-Path 1: To find the final price, calculate the discount: 20% of $50 is 0.20 × 50 = $10. Subtract this from the original price: $50 - $10 = $40. The final price is $40.
+Path 1: To find the federal tax, calculate 22% of $5,000: 0.22 × 5000 = $1,100. Subtract this from gross pay: $5,000 - $1,100 = $3,900. The federal tax is $1,100 and net pay is $3,900.
 
-Path 2: A 20% discount means paying 80% of the original price. So, 80% of $50 is 0.80 × 50 = $40. Therefore, the final price is $40.
+Path 2: Federal tax rate of 22% means 22% of gross pay goes to taxes. So, 22% of $5,000 = 0.22 × 5000 = $1,100 in federal tax. Net pay = Gross pay - Federal tax = $5,000 - $1,100 = $3,900.
 
-Path 3: Compute the discount amount: 20% = 0.20, so 0.20 × $50 = $10 off. The original price is $50, so after the discount, it's $50 - $10 = $40. The final price is $40.
+Path 3: Calculate federal tax: 22% = 0.22, so 0.22 × $5,000 = $1,100. The net pay is the remaining amount after tax: $5,000 - $1,100 = $3,900. Federal tax: $1,100, Net pay: $3,900.
 
-Most common answer: $40
+Most common answer: Federal tax: $1,100, Net pay: $3,900
 ```
 
 **Example 2:**
 ```
-Question: A dataset shows that 60% of customers who bought Product A also bought Product B. If 1000 customers bought Product A, how many likely bought Product B?
+Question: A payroll dataset shows that 60% of employees classified as "W-2 Wages" also have "State Tax" deductions. If 1,000 employees have "W-2 Wages" classification, how many likely have "State Tax" deductions?
 
 Generate 3 different reasoning paths for this question and select the most consistent answer.
 
-Path 1: If 60% of customers who bought Product A also bought Product B, then out of 1000 customers who bought Product A, 60% of them bought Product B. So, 60% of 1000 = 0.60 × 1000 = 600 customers bought Product B.
+Path 1: If 60% of employees with "W-2 Wages" also have "State Tax" deductions, then out of 1,000 employees with "W-2 Wages", 60% of them have "State Tax" deductions. So, 60% of 1,000 = 0.60 × 1000 = 600 employees have "State Tax" deductions.
 
-Path 2: The correlation is 60%, meaning 60 out of every 100 customers who bought Product A also bought Product B. For 1000 customers: (60/100) × 1000 = 600 customers bought Product B.
+Path 2: The correlation is 60%, meaning 60 out of every 100 employees with "W-2 Wages" also have "State Tax" deductions. For 1,000 employees: (60/100) × 1000 = 600 employees have "State Tax" deductions.
 
-Path 3: Calculate 60% of 1000: 1000 × 0.60 = 600. Therefore, 600 customers who bought Product A also bought Product B.
+Path 3: Calculate 60% of 1,000: 1,000 × 0.60 = 600. Therefore, 600 employees with "W-2 Wages" classification also have "State Tax" deductions.
 
-Most common answer: 600 customers
+Most common answer: 600 employees
 ```
 
 **Example 3:**
 ```
-Question: If all roses are flowers, and some flowers are red, can we conclude that some roses are red?
+Question: If all payroll transactions must be classified into tax codes, and some tax codes require state tax calculations, can we conclude that all payroll transactions require state tax calculations?
 
 Generate 3 different reasoning paths for this question and select the most consistent answer.
 
-Path 1: We know all roses are flowers, and some flowers are red. Since roses are a subset of flowers, and some flowers are red, it's possible that some roses are red. However, we cannot definitively conclude this because the red flowers might not include any roses. The answer is: We cannot definitively conclude this.
+Path 1: We know all payroll transactions must be classified into tax codes, and some tax codes require state tax calculations. Since transactions are classified into tax codes, and some tax codes require state tax, it's possible that some transactions require state tax. However, we cannot definitively conclude that ALL transactions require state tax because some tax codes might not require state tax calculations. The answer is: We cannot definitively conclude that all transactions require state tax.
 
-Path 2: All roses are flowers (Roses ⊆ Flowers), and some flowers are red (Flowers ∩ Red ≠ ∅). Since roses are flowers, and some flowers are red, there's a possibility that some roses are red, but it's not guaranteed. The conclusion is uncertain.
+Path 2: All transactions are classified into tax codes (Transactions ⊆ Tax Codes), and some tax codes require state tax (Tax Codes ∩ State Tax Required ≠ ∅). Since transactions are classified into tax codes, and some tax codes require state tax, there's a possibility that some transactions require state tax, but it's not guaranteed for all. The conclusion is uncertain for all transactions.
 
-Path 3: The premises tell us roses are flowers and some flowers are red. But "some flowers are red" doesn't specify which flowers. The red flowers could be entirely separate from roses. We cannot logically conclude that some roses are red from these premises alone.
+Path 3: The premises tell us all transactions are classified into tax codes and some tax codes require state tax. But "some tax codes require state tax" doesn't specify which tax codes. The state tax-required codes could be a subset of all codes. We cannot logically conclude that all transactions require state tax from these premises alone.
 
-Most common answer: We cannot definitively conclude that some roses are red
+Most common answer: We cannot definitively conclude that all payroll transactions require state tax calculations
 ```
 
 **Explanation of Concept:**
-Self-Consistency involves generating multiple answers to the same question using varied reasoning approaches to ensure reliability. By comparing the results, you select the most frequent or consistent outcome, reducing the chance of errors from a single flawed reasoning path. This method leverages the model's ability to approach the problem from different angles, increasing confidence in the final answer when all paths converge, as seen here with the consistent result of $40.
+Self-Consistency involves generating multiple answers to the same question using varied reasoning approaches to ensure reliability. By comparing the results, you select the most frequent or consistent outcome, reducing the chance of errors from a single flawed reasoning path. This method leverages the model's ability to approach the problem from different angles, increasing confidence in the final answer when all paths converge, as seen here with the consistent payroll calculation result.
 
 ### Step-Back Prompting
 
@@ -597,38 +597,38 @@ Ask a more general question first, then use that context for the specific questi
 
 **Example 1:**
 ```
-First, what are the key principles of good user interface design?
+First, what are the key principles of accurate payroll processing?
 
 [Get response]
 
-Now, using those principles, redesign this mobile app's login screen: [description]
+Now, using those principles, design a payroll validation workflow for processing 10,000 employees: [description]
 ```
 
 **Example 2:**
-Question: How should I optimize the loading speed of my e-commerce website?
+Question: How should I optimize payroll processing speed for large employee counts?
 ```
-Step 1: First, what are the key factors that generally affect website loading speed?
+Step 1: First, what are the key factors that generally affect payroll processing performance?
 
 Response: Key factors include:
-- Server response time (hosting quality, server location)
-- Image and asset optimization (file size, compression)
-- Code efficiency (minifying CSS/JavaScript, reducing HTTP requests)
-- Caching strategies (browser caching, CDNs)
-- Third-party scripts (ads, analytics)
+- Database query optimization (indexing, query efficiency)
+- Calculation complexity (tax codes, deductions, benefits)
+- Data processing efficiency (batch processing, parallelization)
+- System resource allocation (CPU, memory, network)
+- Integration overhead (API calls to tax engine, external systems)
 
-Step 2: Using these factors, provide specific recommendations to optimize the loading speed of an e-commerce website with heavy product images and multiple third-party plugins.
+Step 2: Using these factors, provide specific recommendations to optimize payroll processing speed for a payroll run with 10,000 employees, complex multi-state tax calculations, and integration with Business Central.
 
 Response:
-1. **Server Optimization**: Choose a reliable hosting provider with servers close to your audience. Enable server-side caching (e.g., Redis or Varnish).
-2. **Image Optimization**: Compress product images using formats like WebP. Implement lazy loading to defer off-screen images.
-3. **Code Efficiency**: Minify CSS and JavaScript files. Combine small files to reduce HTTP requests.
-4. **Caching**: Use a Content Delivery Network (CDN) like Cloudflare to cache static content globally. Set browser cache headers for repeat visitors.
-5. **Third-Party Plugins**: Audit and remove unnecessary plugins. Asynchronously load scripts for analytics or ads to avoid blocking page rendering.
+1. **Database Optimization**: Optimize employee data queries with proper indexing. Use batch processing to reduce database round trips. Implement connection pooling for better resource utilization.
+2. **Calculation Efficiency**: Pre-calculate tax rates and deduction formulas. Cache frequently used tax code mappings. Parallelize independent calculations across employee groups.
+3. **Processing Architecture**: Implement batch processing (e.g., process 1,000 employees per batch). Use asynchronous processing for non-critical validations. Queue heavy calculations for background processing.
+4. **System Resources**: Allocate sufficient CPU and memory for concurrent calculations. Use load balancing for distributed processing. Monitor resource usage to identify bottlenecks.
+5. **Integration Optimization**: Batch API calls to tax engine instead of per-employee calls. Cache tax calculation results for similar scenarios. Use asynchronous integration calls where possible.
 
 ```
 
 **Explanation of Concept:**
-Step-Back Prompting involves first asking a broader, foundational question to establish key principles or context before tackling the specific task. This approach ensures the model grounds its response in general knowledge (e.g., factors affecting website speed) before applying it to the specific problem (e-commerce site optimization). By breaking the task into two steps, the model produces more informed and structured recommendations, reducing the risk of overlooking critical factors.
+Step-Back Prompting involves first asking a broader, foundational question to establish key principles or context before tackling the specific task. This approach ensures the model grounds its response in general knowledge (e.g., factors affecting payroll processing performance) before applying it to the specific problem (payroll optimization for large employee counts). By breaking the task into two steps, the model produces more informed and structured recommendations, reducing the risk of overlooking critical factors.
 
 
 ### ReAct (Reasoning + Acting)
@@ -637,40 +637,52 @@ Combine reasoning with tool use or actions.
 
 **Example 1:**
 ```
-I need to find out how many children the members of Metallica have in total.
+I need to find out why payroll processing failed for employee ID 12345 in the last payroll run.
 
-Thought: I need to find information about each band member and their children.
-Action: Search for "Metallica band members"
-Observation: [results]
-Thought: Now I need to search for each member individually...
+Thought: I need to find information about this specific employee's payroll record and any error logs.
+Action: query_database
+<parameter name="query">SELECT * FROM payroll_records WHERE employee_id = '12345' AND pay_period = '2025-01-15'</parameter>
+Observation: [results show employee record exists but payroll_status = 'FAILED']
+Thought: Now I need to check the error logs for this specific payroll run to understand why it failed.
+Action: search_splunk_logs
+<parameter name="query">employee_id:12345 AND pay_period:2025-01-15 AND level:ERROR</parameter>
+Observation: [Error log shows: "Tax calculation failed: Invalid state tax code for employee location"]
+Thought: The issue is with state tax code classification. I need to verify the employee's state and the correct tax code.
+Action: verify_employee_state_tax_code
+<parameter name="employee_id">12345</parameter>
+<parameter name="state">CA</parameter>
+Observation: [Tax code verification shows employee should use CA state tax code, but system used NY code]
+Final Answer: Payroll failed because employee ID 12345 was incorrectly assigned NY state tax code instead of CA. The employee's location is California, but the system used New York tax calculations, causing the failure.
 ```
 
 **Example 2:**
 ```
-Question: What is the current population of Tokyo, and how does it compare to New York City?
+Question: What is the current payroll processing time for 1,000 employees, and how does it compare to our target of 30 minutes?
 
-Thought: I need to find the current population of Tokyo and New York City to compare them. I should start by searching for the latest population data for Tokyo.
+Thought: I need to find the current payroll processing metrics and compare them to our target. I should start by querying the payroll performance logs.
 
-Action: web_search
-<parameter name="query">current population of Tokyo 2025</parameter
+Action: query_performance_metrics
+<parameter name="query">SELECT AVG(processing_time) FROM payroll_runs WHERE employee_count BETWEEN 900 AND 1100 AND run_date >= '2025-01-01'</parameter>
 
-Observation: [Assume tool response: According to recent estimates, Tokyo's population in 2025 is approximately 37.4 million in the metropolitan area.]
+Observation: [Assume tool response: Average processing time for ~1,000 employees is 45 minutes based on last 10 payroll runs.]
 
-Thought: Now I have Tokyo's population. Next, I need the population for New York City.
+Thought: Now I have the current processing time (45 minutes). I need to compare this to our target (30 minutes) and identify the gap.
 
-Action: web_search
-<parameter name="query">current population of New York City 2025</parameter
+Action: analyze_performance_gap
+<parameter name="current_time">45 minutes</parameter>
+<parameter name="target_time">30 minutes</parameter>
+<parameter name="employee_count">1000</parameter>
 
-Observation: [Assume tool response: New York City's metropolitan area population in 2025 is estimated at about 23.6 million.]
+Observation: [Analysis shows: Current time is 50% slower than target. Main bottlenecks: tax calculation (15 min), database queries (10 min), integration calls (8 min)]
 
-Thought: With both figures, I can compare them. Tokyo has a larger population than New York City by about 13.8 million people.
+Thought: With both metrics, I can provide a comprehensive comparison. The current processing time is 45 minutes, which is 15 minutes (50%) slower than our 30-minute target.
 
-Final Answer: Tokyo's population is approximately 37.4 million, compared to New York City's 23.6 million, making Tokyo significantly larger.
+Final Answer: Current payroll processing time for 1,000 employees is 45 minutes, which is 50% slower than our target of 30 minutes. The main performance bottlenecks are tax calculations (15 min), database queries (10 min), and integration calls (8 min). We need to optimize these areas to meet the target.
 
 ```
 
 **Explanation of Concept:**
-ReAct (Reasoning + Acting) is a prompting strategy that interleaves reasoning steps (Thoughts) with actions (tool calls or external queries) to solve complex problems iteratively. Each cycle includes a Thought (planning the next step), an Action (executing a tool or search), and an Observation (processing the result). This loop continues until the question is resolved, allowing the model to dynamically gather information and refine its approach. It's particularly useful for tasks requiring real-time data or multi-step verification, as demonstrated by sequentially fetching and comparing population data.
+ReAct (Reasoning + Acting) is a prompting strategy that interleaves reasoning steps (Thoughts) with actions (tool calls or external queries) to solve complex problems iteratively. Each cycle includes a Thought (planning the next step), an Action (executing a tool or search), and an Observation (processing the result). This loop continues until the question is resolved, allowing the model to dynamically gather information and refine its approach. It's particularly useful for tasks requiring real-time data or multi-step verification, as demonstrated by sequentially querying payroll databases, searching error logs, and verifying tax codes to diagnose payroll processing issues.
 
 ### Tree of Thoughts (ToT)
 
@@ -685,38 +697,38 @@ Explore multiple reasoning branches simultaneously for complex problems.
 
 **Example:**
 
-Question: What is the best marketing strategy for launching a new eco-friendly clothing brand targeting young adults?
+Question: What is the best strategy for implementing AI-powered payroll anomaly detection at Greenshades?
 
 Task: Explore multiple strategic approaches, evaluate them, and select the best one.
 
-**Branch 1: Social Media Campaign**
-Thought: Young adults are active on platforms like Instagram and TikTok. A campaign using influencers could build brand awareness.
+**Branch 1: Real-Time Anomaly Detection During Payroll Runs**
+Thought: Implement AI to detect anomalies in real-time as payroll is being processed, flagging issues immediately.
 Exploration:
-- Pros: High engagement, visually appealing for clothing, cost-effective with micro-influencers.
-- Cons: Risk of inauthentic partnerships, oversaturation in influencer marketing.
-Evaluation: Strong for visibility but needs unique content to stand out. Score: 8/10.
+- Pros: Immediate error detection, prevents bad data from propagating, reduces manual review time by 90%.
+- Cons: Requires high-performance infrastructure, may slow down processing if not optimized.
+Evaluation: Strong for preventing errors but needs careful performance optimization. Score: 8.5/10.
 
-**Branch 2: Sustainable Pop-Up Events**
-Thought: Hosting pop-up shops at eco-conscious festivals or college campuses could create direct engagement.
+**Branch 2: Post-Processing Batch Analysis**
+Thought: Run AI anomaly detection after payroll processing completes, analyzing all records in batch.
 Exploration:
-- Pros: Hands-on experience with products, builds community, aligns with eco-friendly values.
-- Cons: High logistical costs, limited geographic reach.
-Evaluation: Great for brand authenticity but resource-intensive. Score: 7/10.
+- Pros: Doesn't impact processing speed, can analyze full dataset comprehensively, easier to implement.
+- Cons: Errors detected after processing, requires correction workflows, may delay payroll completion.
+Evaluation: Good for comprehensive analysis but slower error detection. Score: 7/10.
 
-**Branch 3: Collaborative Partnerships**
-Thought: Partnering with eco-friendly brands (e.g., sustainable accessories) could cross-promote to aligned audiences.
+**Branch 3: Hybrid Approach: Light Real-Time + Deep Batch Analysis**
+Thought: Combine lightweight real-time checks for critical errors with comprehensive batch analysis for detailed insights.
 Exploration:
-- Pros: Expands reach via partner networks, reinforces eco-mission.
-- Cons: Complex coordination, potential brand dilution.
-Evaluation: Effective for niche targeting but requires careful partner selection. Score: 7.5/10.
+- Pros: Best of both worlds - immediate critical error detection plus thorough analysis, balanced performance.
+- Cons: More complex implementation, requires two-tier system design.
+Evaluation: Optimal balance of speed and thoroughness. Score: 9/10.
 
-**Synthesis**: Combine a social media campaign (Branch 1) with selective pop-up events (Branch 2) for maximum impact. Use partnerships (Branch 3) to amplify reach at events.
+**Synthesis**: Combine real-time critical anomaly detection (Branch 1) with comprehensive batch analysis (Branch 2) for maximum effectiveness. Use hybrid approach (Branch 3) to balance performance and thoroughness.
 
-Final Strategy: Launch with a TikTok influencer campaign showcasing eco-friendly clothing, paired with pop-up shops at green festivals to engage young adults directly. Collaborate with a sustainable accessory brand to co-promote at events.
+Final Strategy: Implement a hybrid AI anomaly detection system with lightweight real-time checks for critical errors (negative deductions, extreme pay amounts, data integrity issues) during payroll processing, combined with comprehensive batch analysis after processing completes to identify patterns, trends, and subtle anomalies. This approach provides immediate error prevention while maintaining processing speed and enabling deep insights.
 
 
 **Explanation of Concept:**
-Tree of Thoughts (ToT) involves generating multiple reasoning branches to explore different solutions to a problem, evaluating each, and synthesizing the best ideas into a final answer. Each branch represents a distinct approach, which is explored, assessed for pros and cons, and scored. This method is ideal for complex, open-ended tasks like strategic planning, as it encourages creative exploration and systematic comparison, as shown in the marketing strategy example above.
+Tree of Thoughts (ToT) involves generating multiple reasoning branches to explore different solutions to a problem, evaluating each, and synthesizing the best ideas into a final answer. Each branch represents a distinct approach, which is explored, assessed for pros and cons, and scored. This method is ideal for complex, open-ended tasks like strategic planning, as it encourages creative exploration and systematic comparison, as shown in the AI-powered payroll anomaly detection strategy example above.
 
 
 ## Best Practices for Effective Prompts
@@ -725,12 +737,12 @@ Tree of Thoughts (ToT) involves generating multiple reasoning branches to explor
 
 **Bad:**
 ```
-Write about dogs.
+Write about payroll.
 ```
 
 **Good:**
 ```
-Write a 300-word informative article about the health benefits of owning a dog, focusing on mental health, physical activity, and social connections. Use a friendly, accessible tone for general readers.
+Write a 300-word informative article about payroll processing best practices at Greenshades, focusing on tax code classification, error prevention, and compliance requirements. Use a professional, technical tone for payroll administrators.
 ```
 
 ### 2. Use Action Verbs
@@ -758,12 +770,12 @@ Example: [Sample of desired output]
 
 **Better:**
 ```
-Write a professional email summarizing the key points from our meeting.
+Write a professional email to the payroll team summarizing the key findings from the payroll processing review meeting, including error rates, processing times, and action items.
 ```
 
 **Avoid:**
 ```
-Write an email but don't make it too long or too informal or too detailed.
+Write an email about payroll but don't make it too long or too technical or too detailed.
 ```
 
 ### 6. Control Output Format
@@ -843,9 +855,9 @@ Context: This is for a {industry} company with {company_size} employees
 
 **Example Fix:**
 ```
-Before: "Write about marketing"
+Before: "Write about payroll processing"
 
-After: "As a senior marketing strategist with 10 years experience, write a 500-word article about B2B content marketing strategies for SaaS companies targeting CTOs. Format as: Introduction, 3 main strategies with examples, conclusion with actionable next steps."
+After: "As a senior payroll analyst with 10 years experience at Greenshades, write a 500-word article about AI-powered payroll processing strategies for large-scale payroll operations targeting payroll administrators. Format as: Introduction, 3 main strategies with examples from Avocado platform, conclusion with actionable next steps for implementation."
 ```
 
 ---
@@ -866,9 +878,9 @@ After: "As a senior marketing strategist with 10 years experience, write a 500-w
 
 **Example Fix:**
 ```
-Before: "What are the latest AI trends?"
+Before: "What are the latest payroll processing trends?"
 
-After: "Based only on verified sources from 2024-2025, list the top 5 AI trends with specific examples. For each trend, include: (1) What it is, (2) Real companies implementing it, (3) Verified statistics. If you cannot verify a fact, state 'Information not verified' instead of guessing."
+After: "Based only on verified sources from 2024-2025 and Greenshades internal documentation, list the top 5 AI trends in payroll processing with specific examples. For each trend, include: (1) What it is, (2) Real payroll software companies implementing it, (3) Verified statistics from industry reports. If you cannot verify a fact, state 'Information not verified' instead of guessing."
 ```
 
 ---
@@ -889,12 +901,13 @@ After: "Based only on verified sources from 2024-2025, list the top 5 AI trends 
 
 **Example Fix:**
 ```
-Before: "Analyze this data and give me insights"
+Before: "Analyze this payroll data and give me insights"
 
-After: "Analyze the following data and provide insights in EXACTLY this JSON format:
+After: "Analyze the following payroll processing data and provide insights in EXACTLY this JSON format:
 {
   'summary': 'one sentence summary',
   'key_insights': ['insight1', 'insight2', 'insight3'],
+  'anomalies_detected': ['anomaly1', 'anomaly2'],
   'recommendations': ['rec1', 'rec2'],
   'confidence': 'high/medium/low'
 }
@@ -919,13 +932,13 @@ Strictly follow this format. Do not add extra fields or change structure."
 
 **Example Fix:**
 ```
-Before: "Generate product names"
+Before: "Generate feature names"
 
-After: "Generate 5 product names for a fitness app. Requirements:
+After: "Generate 5 feature names for a payroll anomaly detection feature in Avocado. Requirements:
 - Each name must be 1-2 words
-- Must convey energy and motivation
+- Must convey accuracy and reliability
 - Must be brandable and memorable
-- Follow this pattern: [Adjective] + [Noun] (e.g., 'FitPulse', 'ActiveCore')
+- Follow this pattern: [Action] + [Noun] or [Adjective] + [Noun] (e.g., 'PayGuard', 'AnomalyAlert')
 Be consistent with this style across all 5 names."
 ```
 
@@ -947,12 +960,12 @@ Be consistent with this style across all 5 names."
 
 **Example Fix:**
 ```
-Before: "Summarize this article"
+Before: "Summarize this payroll report"
 
-After: "Summarize this article in exactly 150 words. Structure as:
-- Opening sentence (15 words): Main point
-- Body (120 words): Key details
-- Closing sentence (15 words): Conclusion
+After: "Summarize this payroll processing report in exactly 150 words. Structure as:
+- Opening sentence (15 words): Main finding
+- Body (120 words): Key metrics, anomalies detected, processing performance
+- Closing sentence (15 words): Recommendation
 Count your words and ensure total is 150 words."
 ```
 
@@ -974,9 +987,9 @@ Count your words and ensure total is 150 words."
 
 **Example Fix:**
 ```
-Before: "Explain how to optimize a website"
+Before: "Explain how to optimize payroll processing"
 
-After: "As a senior SEO specialist with 15 years experience, explain technical SEO optimization for an e-commerce site. Context: Site has 10,000+ products, uses JavaScript rendering, and competes in competitive market. Focus on: (1) Core Web Vitals optimization, (2) Schema markup for products, (3) Internal linking strategy. Use SEO terminology correctly (e.g., canonical tags, hreflang, crawl budget)."
+After: "As a senior payroll systems architect with 15 years experience at Greenshades, explain technical optimization for payroll processing in Avocado. Context: System processes 50,000+ employees, uses real-time tax calculations, and integrates with Business Central. Focus on: (1) Database query optimization for employee data, (2) Tax calculation caching strategies, (3) Batch processing architecture. Use payroll terminology correctly (e.g., gross pay, net pay, tax codes, payroll runs, pay periods)."
 ```
 
 ---
@@ -997,12 +1010,12 @@ After: "As a senior SEO specialist with 15 years experience, explain technical S
 
 **Example Fix:**
 ```
-Before: "List benefits of remote work"
+Before: "List benefits of AI in payroll"
 
-After: "List 10 unique benefits of remote work. Requirements:
+After: "List 10 unique benefits of AI-powered payroll processing at Greenshades. Requirements:
 - Each benefit must be distinct (no overlap)
-- Provide one specific example per benefit
-- Cover different categories: productivity, work-life balance, cost savings, diversity, etc.
+- Provide one specific example per benefit from Avocado or Payroll Tax Engine
+- Cover different categories: accuracy, speed, cost savings, compliance, employee experience, etc.
 - If you find yourself repeating similar points, think of a different angle or category."
 ```
 
@@ -1030,82 +1043,86 @@ When your prompt isn't working, check:
 
 ### Example 1: Content Creation
 
-**Task:** Create a social media post
+**Task:** Create a payroll processing announcement
 
 **Basic prompt:**
 ```
-Write a social media post about coffee.
+Write an announcement about payroll.
 ```
 
 **Improved prompt:**
 ```
-Write an engaging Instagram post for a local coffee shop's new seasonal drink. 
+Write an engaging internal announcement for the Greenshades team about the new AI-powered payroll anomaly detection feature in Avocado. 
 
-Context: Fall season launch of Pumpkin Spice Maple Latte
-Audience: Coffee enthusiasts aged 25-40
-Tone: Warm, inviting, not overly promotional
+Context: New feature launch that detects payroll errors automatically
+Audience: Payroll administrators and HR staff at Greenshades
+Tone: Professional, informative, highlighting benefits
 Format: 
-- Main text (150 characters max)
-- 3-5 relevant hashtags
-- Call to action
+- Main text (200 words max)
+- Key benefits (bullet points)
+- Call to action (how to access the feature)
 
-Include sensory details about taste and aroma.
+Include specific examples of anomalies it can detect (e.g., unusual gross pay, negative deductions, tax code mismatches).
 ```
 
 ### Example 2: Data Analysis
 
-**Task:** Analyze customer feedback
+**Task:** Analyze payroll processing data
 
 **Basic prompt:**
 ```
-What do customers think about our product?
+What do the payroll metrics show?
 ```
 
 **Improved prompt:**
 ```
-Analyze the following customer reviews and provide insights:
+Analyze the following payroll processing data and provide insights:
 
-Reviews: [paste reviews here]
+Payroll Data: [paste data here - employee counts, processing times, error rates, tax calculations]
 
 Please provide:
-1. Overall sentiment breakdown (positive/negative/neutral percentages)
-2. Top 3 most mentioned positive aspects
-3. Top 3 most mentioned concerns or issues
-4. Specific recommendations for improvement
+1. Overall performance summary (processing time trends, error rate changes)
+2. Top 3 most common error types
+3. Top 3 performance bottlenecks
+4. Specific recommendations for optimization
 5. Confidence level in your analysis
 
-Format as a structured report with clear headings.
+Format as a structured report with clear headings suitable for payroll administrators.
 ```
 
 ### Example 3: Code Generation
 
-**Task:** Create a function
+**Task:** Create a payroll calculation function
 
 **Basic prompt:**
 ```
-Write a function to sort a list.
+Write a function to calculate payroll.
 ```
 
 **Improved prompt:**
 ```
-Write a Python function that:
+Write a Python function that calculates net pay from gross pay and deductions:
 
 Requirements:
-- Sorts a list of dictionaries by a specified key
-- Handles missing keys gracefully (items without key go to end)
-- Supports both ascending and descending order
-- Includes proper error handling
+- Takes gross pay, federal tax rate, state tax rate, and deductions as inputs
+- Calculates federal tax, state tax, and total deductions
+- Returns net pay (gross pay - all taxes - all deductions)
+- Handles missing or zero values gracefully
+- Includes proper error handling for invalid inputs
 - Has clear documentation
 
 Example usage:
-data = [{"name": "Alice", "age": 30}, {"name": "Bob", "age": 25}]
-result = sort_by_key(data, "age", descending=False)
+gross_pay = 5000
+federal_tax_rate = 0.22
+state_tax_rate = 0.06
+deductions = [100, 50]  # Health insurance, 401k
+result = calculate_net_pay(gross_pay, federal_tax_rate, state_tax_rate, deductions)
 
 Please include:
 - Function definition with type hints
 - Docstring with parameters and return value
 - Example usage
-- Brief explanation of the approach
+- Brief explanation of the calculation approach
 ```
 
 ## Testing and Iteration
@@ -1127,8 +1144,8 @@ Document your prompts systematically:
 
 | Prompt Version | Goal | Model | Temperature | Output Quality | Notes |
 |----------------|------|-------|-------------|----------------|--------|
-| v1.0 | Generate blog post | GPT-4 | 0.7 | Good | Too formal |
-| v1.1 | Generate blog post | GPT-4 | 0.7 | Better | Added tone guidance |
+| v1.0 | Generate payroll processing guide | GPT-4 | 0.7 | Good | Too technical |
+| v1.1 | Generate payroll processing guide | GPT-4 | 0.7 | Better | Added audience context |
 
 ### 2. A/B Test Different Approaches
 
@@ -1311,63 +1328,63 @@ Track these metrics to measure prompt effectiveness:
 
 #### Blog Post Template
 ```
-Role: You are an expert content writer specializing in [topic] for [audience].
+Role: You are an expert content writer specializing in payroll processing and tax compliance for [audience - payroll administrators/HR staff/accountants].
 
-Task: Write a comprehensive blog post about [specific topic].
+Task: Write a comprehensive blog post about [specific topic - e.g., AI-powered payroll anomaly detection, multi-state tax calculations, payroll processing best practices].
 
 Context:
-- Target audience: [describe audience - demographics, interests, knowledge level]
-- Tone: [professional/casual/technical/conversational]
+- Target audience: [describe audience - payroll administrators at Greenshades, HR staff, knowledge level]
+- Tone: [professional/technical/conversational]
 - Length: [word count - e.g., 800-1000 words]
-- Key points to cover: [list 3-5 main points]
-- SEO keywords: [if applicable]
-- Call-to-action: [desired CTA]
+- Key points to cover: [list 3-5 main points - e.g., how AI detects payroll errors, tax code classification, compliance requirements]
+- Platform context: [Avocado, Payroll Tax Engine, Business Central integration]
+- Call-to-action: [desired CTA - e.g., try the new feature, contact support]
 
 Format:
 - Engaging headline (under 60 characters)
 - Compelling introduction hook
 - Main content with clear subheadings (H2, H3)
 - Conclusion with call-to-action
-- 5-7 relevant hashtags
+- 5-7 relevant hashtags (#payroll #taxcompliance #AI #Greenshades)
 
 Output: Complete blog post ready for publication with proper formatting.
 ```
 
 #### Social Media Post Template
 ```
-Role: You are a social media strategist for [platform - Instagram/Twitter/LinkedIn].
+Role: You are a social media strategist for Greenshades [platform - LinkedIn/Twitter].
 
-Task: Create an engaging social media post about [topic].
+Task: Create an engaging social media post about [topic - e.g., new Avocado feature, payroll processing tips, tax compliance updates].
 
 Context:
-- Platform: [Instagram/Twitter/LinkedIn/Facebook]
-- Audience: [target audience description]
-- Goal: [awareness/engagement/sales/education]
-- Brand voice: [tone and style]
-- Hashtags needed: [yes/no, how many]
+- Platform: [LinkedIn/Twitter]
+- Audience: [payroll administrators, HR professionals, accountants]
+- Goal: [awareness/engagement/education]
+- Brand voice: [professional, helpful, technical]
+- Hashtags needed: [yes, 3-5 relevant hashtags]
 
 Format:
 - Hook (first line that grabs attention)
-- Main message (clear, concise)
-- Call-to-action
-- Relevant hashtags (platform-appropriate number)
+- Main message (clear, concise - highlight benefit or tip)
+- Call-to-action (e.g., "Learn more in Avocado" or "Contact our support team")
+- Relevant hashtags (#payroll #taxcompliance #AI #Greenshades #Avocado)
 
 Output: Platform-optimized post ready to publish.
 ```
 
 #### Email Template
 ```
-Role: You are a professional email copywriter specializing in [type - marketing/sales/transactional].
+Role: You are a professional email copywriter specializing in [type - internal communications/payroll notifications/support responses] at Greenshades.
 
-Task: Write an email about [subject].
+Task: Write an email about [subject - e.g., payroll processing update, tax compliance reminder, new feature announcement].
 
 Context:
 - Purpose: [inform/persuade/update/request]
-- Recipient: [audience description]
+- Recipient: [payroll administrators, HR staff, employees]
 - Tone: [professional/friendly/urgent]
 - Length: [brief/medium/detailed]
-- Key message: [main point to convey]
-- Desired action: [what should recipient do?]
+- Key message: [main point to convey - e.g., new AI feature available, payroll processing schedule change]
+- Desired action: [what should recipient do? - e.g., review payroll, update settings, contact support]
 
 Format:
 - Subject line (compelling, under 50 characters)
@@ -1375,7 +1392,7 @@ Format:
 - Opening (hook or context)
 - Body (main message, clear and scannable)
 - Closing (call-to-action)
-- Signature (if applicable)
+- Signature (Greenshades team)
 
 Output: Complete email ready to send.
 ```
@@ -1384,18 +1401,18 @@ Output: Complete email ready to send.
 
 #### Data Summary Template
 ```
-Role: You are a data analyst with expertise in [domain - e.g., marketing, finance, operations].
+Role: You are a data analyst with expertise in payroll processing and tax compliance at Greenshades.
 
-Task: Analyze the following data and provide insights.
+Task: Analyze the following payroll processing data and provide insights.
 
 Data:
-[Paste or describe your data here]
+[Paste or describe your payroll data here - employee counts, processing times, error rates, tax calculations]
 
 Context:
-- Data source: [where data comes from]
-- Time period: [date range]
-- Key metrics: [what to focus on]
-- Business goal: [what decision needs to be made]
+- Data source: [Avocado platform, Payroll Tax Engine, Splunk logs]
+- Time period: [date range - e.g., last month, last quarter]
+- Key metrics: [what to focus on - processing time, error rate, tax calculation accuracy]
+- Business goal: [what decision needs to be made - optimize processing, reduce errors, improve compliance]
 
 Format:
 Return analysis as JSON:
@@ -1414,53 +1431,53 @@ Return analysis as JSON:
   "confidence": "high/medium/low"
 }
 
-Output: Structured analysis ready for decision-making.
+Output: Structured analysis ready for decision-making by payroll administrators.
 ```
 
 ### Code Generation Templates
 
 #### Function Generation Template
 ```
-Role: You are a senior software engineer specializing in [language/framework].
+Role: You are a senior software engineer specializing in [language/framework] at Greenshades, working on payroll processing systems.
 
-Task: Write a [function/class/module] that [specific functionality].
+Task: Write a [function/class/module] that [specific functionality - e.g., calculates net pay, classifies tax codes, validates payroll data].
 
 Requirements:
 - Language: [Python/JavaScript/Java/etc.]
 - Framework: [if applicable]
-- Input: [describe inputs]
-- Output: [describe expected output]
-- Edge cases: [handle these cases]
-- Performance: [any performance requirements]
-- Dependencies: [allowed libraries]
+- Input: [describe inputs - e.g., gross pay, tax rates, deductions]
+- Output: [describe expected output - e.g., net pay, tax code classification, validation result]
+- Edge cases: [handle these cases - e.g., negative values, missing data, zero hours]
+- Performance: [any performance requirements - e.g., must process 1000+ employees in < 1 minute]
+- Dependencies: [allowed libraries - e.g., standard library only, specific payroll libraries]
 
 Format:
 - Function signature with type hints
 - Comprehensive docstring
 - Implementation with comments
 - Error handling
-- Example usage
+- Example usage with payroll data
 - Brief explanation
 
-Output: Production-ready code with documentation.
+Output: Production-ready code with documentation suitable for Avocado or Payroll Tax Engine.
 ```
 
 ### Problem-Solving Templates
 
 #### Problem Analysis Template
 ```
-Role: You are a [domain] expert and problem-solving consultant.
+Role: You are a [domain - payroll/tax compliance/systems] expert and problem-solving consultant at Greenshades.
 
-Task: Analyze this problem and provide a solution framework.
+Task: Analyze this payroll processing problem and provide a solution framework.
 
 Problem:
-[Describe the problem in detail]
+[Describe the problem in detail - e.g., payroll processing errors, tax calculation failures, integration issues]
 
 Context:
-- Domain: [business/technical/personal/etc.]
-- Constraints: [limitations, resources, timeline]
-- Stakeholders: [who is affected]
-- Success criteria: [how to measure success]
+- Domain: [payroll processing/tax compliance/system integration]
+- Constraints: [limitations, resources, timeline - e.g., must maintain compliance, limited budget, 2-week deadline]
+- Stakeholders: [who is affected - payroll administrators, employees, finance team]
+- Success criteria: [how to measure success - e.g., zero errors, < 30 min processing time, 100% compliance]
 
 Format:
 1. Problem Statement (clear, concise)
@@ -1472,23 +1489,23 @@ Format:
 7. Risk Mitigation
 8. Success Metrics
 
-Output: Comprehensive problem-solving analysis.
+Output: Comprehensive problem-solving analysis ready for payroll team review.
 ```
 
 ### Business Templates
 
 #### Product Requirements Document (PRD) Template
 ```
-Role: You are a senior product manager creating a PRD.
+Role: You are a senior product manager creating a PRD for Greenshades products (Avocado, Payroll Tax Engine, Platform Integrations).
 
-Task: Create a comprehensive PRD for [product/feature].
+Task: Create a comprehensive PRD for [product/feature - e.g., AI-powered payroll anomaly detection, multi-state tax calculation engine, Business Central integration enhancement].
 
 Context:
-- Product: [product name and description]
-- Target users: [user personas]
-- Business goals: [what this achieves]
-- Success metrics: [how to measure success]
-- Timeline: [development timeline]
+- Product: [product name and description - e.g., Avocado payroll platform, Payroll Tax Engine]
+- Target users: [user personas - payroll administrators, HR staff, finance team]
+- Business goals: [what this achieves - e.g., reduce payroll errors by 90%, improve processing speed by 50%]
+- Success metrics: [how to measure success - e.g., error rate < 1%, processing time < 30 min for 1000 employees]
+- Timeline: [development timeline - e.g., 3-month sprint]
 
 Format:
 1. Executive Summary
@@ -1496,12 +1513,12 @@ Format:
 3. User Stories
 4. Requirements (Functional & Non-functional)
 5. User Experience Flow
-6. Technical Considerations
+6. Technical Considerations (integration with Avocado, tax engine, Business Central)
 7. Success Metrics
 8. Timeline & Milestones
 9. Risks & Mitigation
 
-Output: Complete PRD ready for stakeholder review.
+Output: Complete PRD ready for stakeholder review at Greenshades.
 ```
 
 ### Customization Tips
@@ -1578,10 +1595,10 @@ Step 3: Write the full content based on outline
 - Academic papers on prompt engineering techniques
 
 ### Practice Projects
-1. **Personal Assistant**: Create prompts for scheduling, email drafting
-2. **Content Creation**: Develop templates for different types of writing
-3. **Data Analysis**: Build prompts for interpreting datasets
-4. **Code Review**: Create prompts for code analysis and improvement
+1. **Payroll Assistant**: Create prompts for payroll processing, tax code classification, error detection
+2. **Content Creation**: Develop templates for payroll documentation, support responses, internal announcements
+3. **Data Analysis**: Build prompts for analyzing payroll processing data, tax calculations, error rates
+4. **Code Review**: Create prompts for reviewing payroll calculation code, tax engine logic, integration scripts
 
 ### Building a Prompt Library
 - Create templates for common tasks
@@ -1676,7 +1693,7 @@ Because a router chooses experts *based on your tokens*, small wording changes c
 
 1. **Front-load domain signals.** Put the clearest task + domain cues in the first few lines to help the router lock onto the right experts early.
 
-   * “Role: Financial analyst. Task: 10-K variance analysis. Output: tabular summary + bullet risks.”
+   * "Role: Payroll analyst. Task: Payroll variance analysis. Output: tabular summary + bullet anomalies."
 2. **Use unambiguous, domain-specific vocabulary.** The router keys off tokens; plain, on-topic terms beat clever phrasing or euphemisms.
 3. **Separate mixed tasks.** If you combine coding, legal, and marketing in one shot, the router may oscillate experts. Break it into steps or run sequential prompts.
 4. **Match examples to the task.** Few-shot exemplars should be in the *same domain, format, and language* as your goal—this strongly reinforces the intended experts.
