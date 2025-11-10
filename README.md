@@ -29,15 +29,21 @@ This AI Learning Hub contains **100+ comprehensive lessons and tutorials** cover
 - ✅ **ESG-Aligned:** Built-in environmental, social, and governance standards
 - ✅ **10× Productivity Framework:** Measurable ROI and productivity metrics
 - ✅ **Responsible AI:** Security, compliance, and ethics integrated throughout
+- ✅ **Hackathon Program:** World-class AI hackathons for all 8 departments
+- ✅ **Productivity Dashboards:** Real-time tracking and measurement of 10× progress
+- ✅ **Subscriptions Guide:** Complete reference for all required AI tool subscriptions
 
 ### Repository Statistics
 
-- **Total Modules:** 7 major learning modules
+- **Total Modules:** 9 major learning modules
 - **Total Lessons:** 100+ markdown files
 - **Total Content:** 50,000+ words of expert-curated material
 - **Real-World Examples:** 200+ Greenshades-specific use cases
 - **Learning Paths:** 8 department-specific curricula
 - **Quick References:** 6 daily-use cheat sheets
+- **Hackathon Program:** Complete program for 8 departments
+- **Productivity Dashboards:** 9 comprehensive dashboards
+- **Subscriptions Guide:** Complete tool subscription reference
 
 ---
 
@@ -99,12 +105,13 @@ The foundation of Greenshades' AI transformation—a comprehensive 8-week curric
 - **Department-wise OKR templates** ⭐
 
 #### Week 7: AI in Action
-**Module:** `06_ai_in_action_showcases/` (23 files)
+**Module:** `06_ai_in_action_showcases/` (4 files)
 - Internal success stories
 - Industry case studies
 - Mini-demos playbook
-- AI hackathon guides
-- Best practices showcase
+- AI showcase hackathon guide
+
+**Note:** Complete hackathon program has been moved to dedicated `hackathon/` folder (see below)
 
 #### Week 8: Leadership and Learning Resources
 **Modules:** 
@@ -177,6 +184,42 @@ Master AI-powered Product Requirements Document creation with ChatPRD, including
 
 Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 
+#### 7. AI Hackathon Program
+**Location:** `hackathon/`
+
+**World-class AI hackathon program** for all departments with:
+- Complete hackathon guides for 8 departments (Engineering, QA, Product, HR, Finance, Sales, Support, Leadership)
+- Pre-hackathon milestones (8-12 week preparation plans)
+- Master overview and implementation checklist
+- Department-specific problem statements and judging criteria
+- All examples tailored to Greenshades payroll/tax/HR context
+
+**See:** [Hackathon Program README](./hackathon/README.md)
+
+#### 8. 10× Productivity Dashboards
+**Location:** `dashboards/`
+
+**Comprehensive productivity dashboards** for tracking and achieving 10× productivity:
+- Department-specific dashboards (8 departments)
+- Organization-wide leadership dashboard
+- Real-time productivity metrics and KPIs
+- AI tool usage tracking
+- 10× achievement path and milestone tracking
+- Action items and strategic initiatives
+
+**See:** [Dashboards README](./dashboards/README.md)
+
+#### 9. Subscriptions Guide
+**Location:** `subscriptionsneeded.md`
+
+Complete guide to all AI tool subscriptions needed for the curriculum:
+- Code generation tools (GitHub Copilot, Cursor, Claude Code)
+- General AI tools (Claude, ChatGPT, Gemini)
+- Product tools (ChatPRD)
+- UI/UX tools (Visily, UXPilot, Figma)
+- Pricing for basic packages
+- Role-based recommendations
+
 ---
 
 ## 🎯 Department-Wise Learning Paths
@@ -204,6 +247,10 @@ Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 - Achieve 10× productivity in code generation and testing
 - Build AI-powered features in Avocado and Payroll Tax Engine
 
+**Additional Resources:**
+- [Engineering Hackathon Guide](./hackathon/02_departments/engineering/hackathon_guide.md)
+- [Engineering Dashboard](./dashboards/engineering_dashboard.md)
+
 ---
 
 ### For QA (Quality Assurance) Teams
@@ -226,6 +273,10 @@ Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 - Automate test creation and execution
 - Implement AI-powered anomaly detection for payroll validation
 - Achieve 90% reduction in manual test execution time
+
+**Additional Resources:**
+- [QA Hackathon Guide](./hackathon/02_departments/qa/hackathon_guide.md)
+- [QA Dashboard](./dashboards/qa_dashboard.md)
 
 ---
 
@@ -251,6 +302,10 @@ Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 - Plan AI-powered features for Avocado and Payroll Tax Engine
 - Create comprehensive product requirements with AI assistance
 - Drive product innovation with AI-first thinking
+
+**Additional Resources:**
+- [Product Hackathon Guide](./hackathon/02_departments/product/hackathon_guide.md)
+- [Product Dashboard](./dashboards/product_dashboard.md)
 
 ---
 
@@ -366,6 +421,10 @@ Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 - Lead organizational AI transformation
 - Make informed AI investment decisions
 
+**Additional Resources:**
+- [Leadership Hackathon Guide](./hackathon/02_departments/leadership/hackathon_guide.md)
+- [Leadership Dashboard](./dashboards/leadership_dashboard.md) - Organization-wide view
+
 ---
 
 ## 🚀 Getting Started
@@ -390,6 +449,16 @@ Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 - Take the 5-question quizzes
 - Apply learnings to your daily work
 
+**Step 5: Track Your Progress**
+- Review your department's [10× Productivity Dashboard](./dashboards/README.md)
+- Monitor AI tool usage and adoption
+- Track productivity improvements
+
+**Step 6: Participate in Hackathons**
+- Complete [Pre-Hackathon Milestones](./hackathon/README.md) for your department
+- Join department hackathons to apply your skills
+- Build innovative AI-powered solutions
+
 ### Prerequisites
 
 **Required for All:**
@@ -401,6 +470,11 @@ Tutorials for AI-powered UI/UX design with Visily.ai, UXPilot.ai, and Figma.ai.
 - Previous AI experience (curriculum covers from basics)
 - Programming knowledge (for technical modules)
 - Domain expertise (curriculum teaches Greenshades context)
+
+**Subscriptions Needed:**
+- See [subscriptionsneeded.md](./subscriptionsneeded.md) for complete list of required AI tool subscriptions
+- Basic packages recommended for each role
+- Free tiers available for most tools to get started
 
 ### Recommended Learning Approach
 
@@ -435,6 +509,8 @@ Every example, every use case, every prompt is tailored to Greenshades:
 - Actual workflows from industry best practices
 - Implementation checklists
 - ROI calculators and OKR templates
+- Complete hackathon program ready to execute
+- Productivity dashboards for real-time tracking
 
 #### 4. **ESG and 10× Productivity Built-In**
 - Every lesson includes ESG (Environmental, Social, Governance) standards
@@ -478,6 +554,9 @@ Every example, every use case, every prompt is tailored to Greenshades:
 - **Quick Reference Guides:** `00_ai_awareness_and_strategy/09_quick_reference_guides/`
 - **Success Stories:** `00_ai_awareness_and_strategy/06_ai_in_action_showcases/`
 - **Learning Paths:** `00_ai_awareness_and_strategy/07_ai_learning_resources/`
+- **Hackathon Program:** `hackathon/README.md`
+- **Productivity Dashboards:** `dashboards/README.md`
+- **Subscriptions Guide:** `subscriptionsneeded.md`
 
 ### External Resources
 - **Claude Code Documentation:** https://docs.anthropic.com/en/docs/claude-code/overview
@@ -490,7 +569,7 @@ Every example, every use case, every prompt is tailored to Greenshades:
 
 ```
 greenshades/
-├── 00_ai_awareness_and_strategy/     # 8-week comprehensive curriculum (77 files)
+├── 00_ai_awareness_and_strategy/     # 8-week comprehensive curriculum
 │   ├── 00_introduction_to_ai_and_agentic_ai/      # Week 1: Foundations
 │   ├── 01_ai_vs_ai_assisted_vs_ai_driven/          # Week 2: Development paradigms
 │   ├── 02_ai_in_greenshades_ecosystem/              # Week 3: Use cases
@@ -507,7 +586,32 @@ greenshades/
 ├── 03_video_generation/                              # Video generation tutorials
 ├── 04_chatprd_generation/                            # PRD generation for PMs
 ├── 05_code_generation/                               # Claude Code complete guide
-└── 06_ui_ux_generation/                              # UI/UX generation tutorials
+├── 06_ui_ux_generation/                              # UI/UX generation tutorials
+├── hackathon/                                        # AI hackathon program
+│   ├── 00_master_overview.md                         # Program overview
+│   ├── 01_implementation_checklist.md                # Implementation guide
+│   ├── 02_departments/                               # Department hackathons
+│   │   ├── engineering/                              # Engineering hackathon
+│   │   ├── qa/                                       # QA hackathon
+│   │   ├── product/                                  # Product hackathon
+│   │   ├── hr/                                       # HR hackathon
+│   │   ├── finance/                                  # Finance hackathon
+│   │   ├── sales/                                    # Sales hackathon
+│   │   ├── support/                                  # Support hackathon
+│   │   └── leadership/                               # Leadership hackathon
+│   └── 03_resources/                                # Templates and resources
+├── dashboards/                                       # 10× Productivity dashboards
+│   ├── README.md                                     # Dashboard overview
+│   ├── engineering_dashboard.md                      # Engineering dashboard
+│   ├── qa_dashboard.md                               # QA dashboard
+│   ├── product_dashboard.md                          # Product dashboard
+│   ├── hr_dashboard.md                               # HR dashboard
+│   ├── finance_dashboard.md                          # Finance dashboard
+│   ├── sales_dashboard.md                            # Sales dashboard
+│   ├── support_dashboard.md                          # Support dashboard
+│   └── leadership_dashboard.md                       # Leadership dashboard
+├── subscriptionsneeded.md                           # AI tool subscriptions guide
+└── README.md                                         # This file
 ```
 
 ---
@@ -578,9 +682,12 @@ Greenshades is at an inflection point. The companies that master AI today will d
 **Ready to begin?** 
 
 1. **Identify your department** in the [Department-Wise Learning Paths](#-department-wise-learning-paths) section
-2. **Start with Week 1:** `00_ai_awareness_and_strategy/00_introduction_to_ai_and_agentic_ai/00_what_is_ai.md`
-3. **Follow your learning path** and track your progress
-4. **Apply what you learn** to your daily work immediately
+2. **Check subscriptions:** Review [subscriptionsneeded.md](./subscriptionsneeded.md) for required tools
+3. **Start with Week 1:** `00_ai_awareness_and_strategy/00_introduction_to_ai_and_agentic_ai/00_what_is_ai.md`
+4. **Follow your learning path** and track your progress
+5. **Monitor your dashboard:** Check your [department dashboard](./dashboards/README.md) regularly
+6. **Join hackathons:** Complete [pre-hackathon milestones](./hackathon/README.md) and participate
+7. **Apply what you learn** to your daily work immediately
 
 **Remember:** AI mastery isn't about knowing everything—it's about knowing how to use AI effectively for Greenshades. This repository gives you everything you need.
 
