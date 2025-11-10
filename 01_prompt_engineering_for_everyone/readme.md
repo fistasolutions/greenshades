@@ -139,7 +139,7 @@ Before diving in, make sure you have:
 13. [Prompt Templates Library](#prompt-templates-library)
 14. [Resources and Next Steps](#resources-and-next-steps)
 15. [Mixture-of-Experts (MoE) and Prompt Engineering](#mixture-of-experts-moe-and-prompt-engineering)
-16. [The 6-Part Prompting Framework](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/readme.md#the-6-part-prompting-framework)
+16. [The 6-Part Prompting Framework](#the-6-part-prompting-framework)
 
 ## What is Prompt Engineering?
 
@@ -203,35 +203,31 @@ Prompt engineering is the art and science of crafting instructions that guide AI
 
 ## Context Engineering Complete Guide
 
-[Complete Guide to Context Engineering for AI Agents](https://github.com/panaversity/learn-n8n-agentic-ai/blob/main/00_prompt_engineering/context_engineering_tutorial.md)
+[Complete Guide to Context Engineering for AI Agents](../context_engineering_tutorial.md)
 
 ## Image Generation Tutorial
 
-[Prompt Engineering Tutorial for Nano Banana](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/image_generation/readme.md)
+[Prompt Engineering Tutorial for Nano Banana](../02_image_generation/readme.md)
 
 ## Video Generation Tutorial
 
-[Video Generation Tutorial for Google Veo 3](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/video_generation/readme.md)
-
-Note: This is bonus material, due to high cost of the Veo 3 model this tutor in not covered in the Panaversity Certification Exams:
-
-https://docs.google.com/document/d/1BygAckkfc_NFQnTfEM6qqUvPdlIHpNItmRtvfRMGp38/edit?usp=sharing
+[Video Generation Tutorial for Google Veo 3](../03_video_generation/readme.md)
 
 ## Code Generation Tutorial
 
-[Code Generation with GitHub Copilot and Cursor](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/code_generation/readme.md)
+[Code Generation with GitHub Copilot and Cursor](../05_code_generation/readme.md)
 
 Master AI-powered code generation with the world's best developer tools. Learn effective prompting techniques for GitHub Copilot and Cursor to generate high-quality, production-ready code across different programming languages and frameworks.
 
 ## UI/UX Generation Tutorial
 
-[UI/UX Generation with Visily.ai, UXPilot.ai, and Figma.ai](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/ui_ux_generation/readme.md)
+[UI/UX Generation with Visily.ai, UXPilot.ai, and Figma.ai](../06_ui_ux_generation/readme.md)
 
 Master AI-powered UI/UX design with the world's best design tools. Learn effective prompting techniques for Visily.ai, UXPilot.ai, and Figma.ai to generate high-quality, user-centered designs, wireframes, and prototypes across different platforms and industries.
 
 ## ChatPRD Generation Tutorial
 
-[ChatPRD Best Prompts for Product/Project Managers](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/chatprd_generation/readme.md)
+[ChatPRD Best Prompts for Product/Project Managers](../04_chatprd_generation/readme.md)
 
 Master AI-powered PRD creation with the world's best product management tool. Learn effective prompting techniques for ChatPRD to generate comprehensive Product Requirements Documents (PRDs), user stories, and technical specifications that align stakeholders and drive successful product outcomes.
 
@@ -1757,6 +1753,6 @@ The future of AI interaction lies in clear, effective communication—and prompt
 
 ## The 6-Part Prompting Framework
 
-Now take your prompting to next level by following this [The 6-Part Prompting Framework](https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/six_part_prompting_framework.md)
+Now take your prompting to next level by following this [The 6-Part Prompting Framework](../six_part_prompting_framework.md)
 
 

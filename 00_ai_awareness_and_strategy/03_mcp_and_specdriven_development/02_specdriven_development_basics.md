@@ -13,7 +13,7 @@ By the end of this lesson, you will be able to:
 
 - Define Spec-Driven Development and understand its principles
 - Write effective specifications for AI code generation
-- Use SpecKit commands (/specify, /extract, /implement, /autofix, /review, /testgen, /trace, /policyguard)
+- Use SpecKit commands (/speckit.constitution, /speckit.specify, /speckit.plan, /speckit.tasks, /speckit.implement, /speckit.clarify, /speckit.analyze, /speckit.checklist)
 - Apply Spec-Driven Development to real Greenshades use cases
 - Understand the workflow from specification to implementation
 - Evaluate when to use Spec-Driven Development
@@ -48,13 +48,13 @@ By the end of this lesson, you will be able to:
 
 ```mermaid
 graph LR
-    A[/specify] --> B[/extract]
-    B --> C[/implement]
-    C --> D[/testgen]
-    D --> E[/review]
-    E --> F[/autofix]
-    F --> G[/trace]
-    G --> H[/policyguard]
+    A[/speckit.constitution/] --> B[/speckit.specify/]
+    B --> C[/speckit.plan/]
+    C --> D[/speckit.tasks/]
+    D --> E[/speckit.implement/]
+    E --> F[/speckit.clarify/]
+    F --> G[/speckit.analyze/]
+    G --> H[/speckit.checklist/]
     
     style A fill:#90EE90
     style C fill:#87CEEB
@@ -64,29 +64,59 @@ graph LR
 
 **Command Reference:**
 
-1. **`/specify`** - Create or update a specification
-2. **`/extract`** - Extract specification from existing code
-3. **`/implement`** - Generate code from specification
-4. **`/autofix`** - Automatically fix issues in generated code
-5. **`/review`** - Review code against specification
-6. **`/testgen`** - Generate tests from specification
-7. **`/trace`** - Trace code back to specification
-8. **`/policyguard`** - Check code against security and policy rules
+1. **`/speckit.constitution`** - Establish or update the system constitution
+2. **`/speckit.specify`** - Create or update a specification
+3. **`/speckit.plan`** - Plan implementation steps from the specification
+4. **`/speckit.tasks`** - Generate actionable task breakdowns
+5. **`/speckit.implement`** - Generate code from specification
+6. **`/speckit.clarify`** - Resolve ambiguities and request clarifications
+7. **`/speckit.analyze`** - Trace outputs back to the specification
+8. **`/speckit.checklist`** - Validate against policy and quality checklists
 
 ---
 
-### Command 1: `/specify` - Create Specification
+### Command 1: `/speckit.constitution` - Establish the Constitution
 
-**Purpose:** Create or update a specification for a feature or function.
+**Purpose:** Create or update the high-level constitution that defines mission, guardrails, and quality standards for the system or feature.
 
 **Usage:**
 ```
-/specify function_name
+/speckit.constitution initiative_name
 ```
 
 **Example:**
 ```
-/specify calculate_overtime_pay
+/speckit.constitution payroll_compliance_suite
+
+Constitution:
+- Mission: Deliver compliant, auditable payroll calculations for mid-market employers.
+- Quality Standards:
+  - All monetary calculations must use decimal with 2-place precision.
+  - Every automated decision requires traceable justification.
+- Guardrails:
+  - Never store personally identifiable information (PII) outside encrypted storage.
+  - Flag and review any calculation that deviates more than 5% from historical norms.
+- Collaboration Rules:
+  - Document rationale for policy updates within 24 hours.
+  - Surface unresolved clarifications before implementation.
+```
+
+**Output:** Constitution captured and ready to inform downstream specifications.
+
+---
+
+### Command 2: `/speckit.specify` - Create or Update a Specification
+
+**Purpose:** Capture a precise, testable specification for a function, workflow, or capability.
+
+**Usage:**
+```
+/speckit.specify function_name
+```
+
+**Example:**
+```
+/speckit.specify calculate_overtime_pay
 
 Specification:
 - Function: calculate_overtime_pay
@@ -110,54 +140,74 @@ Specification:
   - calculate_overtime_pay(-5, 20) = ValueError
 ```
 
-**Output:** Specification saved and ready for implementation.
+**Use Case:** Define a new capability or revise an existing behavior before implementation.
 
 ---
 
-### Command 2: `/extract` - Extract Specification from Code
+### Command 3: `/speckit.plan` - Build the Implementation Plan
 
-**Purpose:** Extract a specification from existing code (reverse engineering).
+**Purpose:** Translate the specification into a sequenced plan that outlines architecture, dependencies, and checkpoints.
 
 **Usage:**
 ```
-/extract function_name
+/speckit.plan function_name
 ```
 
 **Example:**
 ```
-/extract calculate_overtime_pay
+/speckit.plan calculate_overtime_pay
 
-Existing Code:
-def calculate_overtime_pay(hours_worked, hourly_rate):
-    if hours_worked > 40:
-        regular = 40 * hourly_rate
-        overtime = (hours_worked - 40) * hourly_rate * 1.5
-        return regular + overtime
-    return hours_worked * hourly_rate
-
-Extracted Specification:
-- Function: calculate_overtime_pay
-- Inputs: hours_worked (number), hourly_rate (number)
-- Output: number
-- Rules: [extracted from code]
+Plan:
+1. Validate inputs (type and range checks) before computations.
+2. Separate regular hours calculation from overtime logic.
+3. Use Decimal for monetary math to avoid floating-point drift.
+4. Create helper function for overtime multiplier to support future policy updates.
+5. Document edge cases (0 hours, maximum allowable hours, invalid inputs).
+6. Identify integration points for audit logging.
 ```
 
-**Use Case:** Document legacy code, understand existing implementations.
+**Output:** A clear plan that developers can follow before breaking work into tasks.
 
 ---
 
-### Command 3: `/implement` - Generate Code from Specification
+### Command 4: `/speckit.tasks` - Generate Actionable Tasks
 
-**Purpose:** Generate implementation code from a specification.
+**Purpose:** Produce an actionable task list derived from the plan that can be tracked in project tooling.
 
 **Usage:**
 ```
-/implement function_name
+/speckit.tasks function_name
 ```
 
 **Example:**
 ```
-/implement calculate_overtime_pay
+/speckit.tasks calculate_overtime_pay
+
+Task Breakdown:
+- [ ] Create validation helper ensuring hours_worked is between 0-168.
+- [ ] Implement Decimal-based payroll calculation module.
+- [ ] Add overtime helper covering rate multipliers.
+- [ ] Write docstring describing algorithm and edge cases.
+- [ ] Emit audit log when overtime is applied.
+- [ ] Add monitoring hook for anomaly detection.
+```
+
+**Output:** Ready-to-track tasks that align directly with the specification and plan.
+
+---
+
+### Command 5: `/speckit.implement` - Generate Code from Specification
+
+**Purpose:** Produce implementation code that satisfies the approved specification.
+
+**Usage:**
+```
+/speckit.implement function_name
+```
+
+**Example:**
+```
+/speckit.implement calculate_overtime_pay
 
 Generated Code:
 def calculate_overtime_pay(hours_worked: float, hourly_rate: float) -> float:
@@ -188,128 +238,73 @@ def calculate_overtime_pay(hours_worked: float, hourly_rate: float) -> float:
         return regular_pay + overtime_pay
 ```
 
-**Output:** Generated code ready for review and testing.
+**Output:** Production-ready code aligned with the plan, tasks, and specification.
 
 ---
 
-### Command 4: `/testgen` - Generate Tests
+### Command 6: `/speckit.clarify` - Resolve Ambiguities
 
-**Purpose:** Generate test cases from specification.
+**Purpose:** Surface questions, assumptions, or missing details that must be clarified with stakeholders.
 
 **Usage:**
 ```
-/testgen function_name
+/speckit.clarify function_name
 ```
 
 **Example:**
 ```
-/testgen calculate_overtime_pay
+/speckit.clarify calculate_overtime_pay
 
-Generated Tests:
-def test_calculate_overtime_pay_normal_hours():
-    assert calculate_overtime_pay(40, 20) == 800
-
-def test_calculate_overtime_pay_with_overtime():
-    assert calculate_overtime_pay(50, 20) == 1100
-
-def test_calculate_overtime_pay_invalid_hours():
-    with pytest.raises(ValueError):
-        calculate_overtime_pay(-5, 20)
-
-def test_calculate_overtime_pay_invalid_rate():
-    with pytest.raises(ValueError):
-        calculate_overtime_pay(40, 0)
+Clarification Requests:
+1. Should holiday pay follow the same overtime multiplier?
+2. Do salaried employees follow a different overtime rule set?
+3. What logging destination should receive overtime events?
+4. Are fractional hours (e.g., 37.5) supported?
+5. Should we cap overtime at a maximum number of hours per week?
 ```
 
-**Output:** Comprehensive test suite covering happy path, edge cases, and error handling.
+**Output:** Structured questions to resolve before or during implementation.
 
 ---
 
-### Command 5: `/review` - Review Code Against Specification
+### Command 7: `/speckit.analyze` - Analyze Traceability
 
-**Purpose:** Review generated code to ensure it matches the specification.
+**Purpose:** Examine code, tests, or outputs and map them back to the originating specification statements.
 
 **Usage:**
 ```
-/review function_name
+/speckit.analyze function_name
 ```
 
 **Example:**
 ```
-/review calculate_overtime_pay
+/speckit.analyze calculate_overtime_pay
 
-Review Results:
-✅ Implements all specification rules
-✅ Error handling matches specification
-✅ Type hints match specification
-⚠️ Missing: Edge case for hours_worked = 0
-⚠️ Suggestion: Add logging for overtime calculations
+Traceability Map:
+- Code line 21 implements rule: "If hours_worked <= 40"
+- Code line 27 implements rule: "Overtime multiplier 1.5x"
+- Tests test_calculate_overtime_pay_with_overtime maps to example: hours_worked=50
+- Logging hook maps to constitution guardrail: "Flag deviations > 5%"
 ```
 
-**Output:** Review report with compliance status and suggestions.
+**Use Case:** Maintain end-to-end traceability for audits, compliance, and debugging.
 
 ---
 
-### Command 6: `/autofix` - Automatically Fix Issues
+### Command 8: `/speckit.checklist` - Run Policy and Quality Checklists
 
-**Purpose:** Automatically fix issues found in code review.
+**Purpose:** Validate deliverables against organizational policies, security requirements, and quality standards.
 
 **Usage:**
 ```
-/autofix function_name
+/speckit.checklist function_name
 ```
 
 **Example:**
 ```
-/autofix calculate_overtime_pay
+/speckit.checklist calculate_overtime_pay
 
-Fixed Issues:
-- Added edge case handling for hours_worked = 0
-- Added logging for overtime calculations
-- Improved error messages
-```
-
-**Output:** Updated code with fixes applied.
-
----
-
-### Command 7: `/trace` - Trace Code to Specification
-
-**Purpose:** Trace code back to the specification that generated it.
-
-**Usage:**
-```
-/trace function_name
-```
-
-**Example:**
-```
-/trace calculate_overtime_pay
-
-Trace Results:
-- Code line 15: Implements "if hours_worked <= 40" rule
-- Code line 18: Implements "overtime_pay = (hours_worked - 40) * hourly_rate * 1.5" rule
-- Code line 12: Implements "validate hours_worked" error handling
-```
-
-**Use Case:** Understand how code relates to specs, maintain traceability.
-
----
-
-### Command 8: `/policyguard` - Check Against Policies
-
-**Purpose:** Check code against security and policy rules.
-
-**Usage:**
-```
-/policyguard function_name
-```
-
-**Example:**
-```
-/policyguard calculate_overtime_pay
-
-Policy Check Results:
+Checklist Results:
 ✅ No hardcoded credentials
 ✅ Input validation present
 ✅ Error handling implemented
@@ -317,7 +312,7 @@ Policy Check Results:
 ⚠️ Consider: Add audit logging for financial calculations
 ```
 
-**Output:** Policy compliance report with recommendations.
+**Output:** Policy and quality compliance report with recommendations.
 
 ---
 
@@ -325,9 +320,19 @@ Policy Check Results:
 
 **Scenario:** Build a payroll tax calculation function using Spec-Driven Development.
 
-**Step 1: Write Specification**
+**Step 1: Establish the Constitution**
 ```
-/specify calculate_state_tax
+/speckit.constitution state_tax_platform
+
+Constitution:
+- Mission: Deliver compliant, auditable state tax calculations.
+- Guardrails: No hardcoded rates; source tables must be versioned.
+- Quality: Decimal math only, full traceability for rate changes.
+```
+
+**Step 2: Capture the Specification**
+```
+/speckit.specify calculate_state_tax
 
 Specification:
 - Function: calculate_state_tax
@@ -351,41 +356,41 @@ Specification:
   - Raise ValueError for invalid inputs
 ```
 
-**Step 2: Generate Implementation**
+**Step 3: Build the Plan**
 ```
-/implement calculate_state_tax
+/speckit.plan calculate_state_tax
 ```
-*(AI generates code from specification)*
+*(AI derives architectural steps, dependencies, and checkpoints)*
 
-**Step 3: Generate Tests**
+**Step 4: Generate Tasks**
 ```
-/testgen calculate_state_tax
+/speckit.tasks calculate_state_tax
 ```
-*(AI generates comprehensive test suite)*
+*(AI produces an actionable task list aligned to the plan)*
 
-**Step 4: Review Code**
+**Step 5: Generate Implementation**
 ```
-/review calculate_state_tax
+/speckit.implement calculate_state_tax
 ```
-*(Check compliance with specification)*
+*(AI generates code from the specification)*
 
-**Step 5: Fix Issues**
+**Step 6: Clarify Ambiguities**
 ```
-/autofix calculate_state_tax
+/speckit.clarify calculate_state_tax
 ```
-*(Auto-fix any issues found)*
+*(AI surfaces open questions or assumptions)*
 
-**Step 6: Check Policies**
+**Step 7: Analyze Traceability**
 ```
-/policyguard calculate_state_tax
+/speckit.analyze calculate_state_tax
 ```
-*(Verify security and compliance)*
+*(AI maps code, tests, and logs back to the specification and constitution)*
 
-**Step 7: Trace to Specification**
+**Step 8: Run the Checklist**
 ```
-/trace calculate_state_tax
+/speckit.checklist calculate_state_tax
 ```
-*(Maintain traceability)*
+*(AI verifies compliance with policy, security, and quality requirements)*
 
 ---
 
@@ -393,7 +398,7 @@ Specification:
 
 **Scenario:** You need to build a function that validates payroll data.
 
-**Task:** Write a specification using `/specify` format, then describe what `/implement` and `/testgen` would generate.
+**Task:** Write a specification using `/speckit.specify` format, then describe what `/speckit.plan` and `/speckit.implement` would generate.
 
 **Function Requirements:**
 - Validates employee ID exists in database
@@ -403,7 +408,7 @@ Specification:
 
 **Solution:**
 ```
-/specify validate_payroll_data
+/speckit.specify validate_payroll_data
 
 Specification:
 - Function: validate_payroll_data
@@ -426,19 +431,18 @@ Specification:
   - Return clear error messages for each validation failure
 ```
 
-**What `/implement` would generate:**
-- Function with database query for employee_id
-- Validation logic for each rule
-- Error message generation
-- Return tuple with validation results
+**What `/speckit.plan` would generate:**
+- Identify validation helper modules needed.
+- Sequence steps: fetch employee, validate numeric ranges, compare deductions.
+- Highlight dependency on employee database adapter.
+- Note requirement for structured error payloads.
+- Flag need for logging invalid attempts.
 
-**What `/testgen` would generate:**
-- Tests for valid payroll data
-- Tests for invalid employee_id
-- Tests for hours_worked out of range
-- Tests for negative gross_pay
-- Tests for deductions exceeding gross_pay
-- Tests for database connection errors
+**What `/speckit.implement` would generate:**
+- Function with database query for employee_id.
+- Validation logic for each rule.
+- Structured error message generation.
+- Tuple return containing validity flag and error collection.
 
 ---
 
@@ -466,11 +470,11 @@ Specification:
 
 ## Key Takeaways
 
-1. **Spec-Driven Development:** Write specs, AI generates implementation and tests
+1. **Spec-Driven Development:** Define a constitution and specs, then let AI plan, implement, and validate.
 
-2. **SpecKit Commands:** `/specify`, `/extract`, `/implement`, `/autofix`, `/review`, `/testgen`, `/trace`, `/policyguard`
+2. **SpecKit Commands:** `/speckit.constitution`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.implement`, `/speckit.clarify`, `/speckit.analyze`, `/speckit.checklist`
 
-3. **Workflow:** Specify → Implement → Test → Review → Fix → Policy Check → Trace
+3. **Workflow:** Constitution → Specify → Plan → Tasks → Implement → Clarify → Analyze → Checklist
 
 4. **Benefits:** 50-70% faster development, better quality, automated testing, better documentation
 
@@ -481,19 +485,19 @@ Specification:
 ## 5-Question Quiz
 
 ### Question 1 (Multiple Choice)
-What is the first step in Spec-Driven Development?
+What is the first step in the SpecKit workflow?
 
-a) Generate code  
-b) Write tests  
-c) Write specification  
-d) Review code
+a) Generate tasks  
+b) Implement code  
+c) Establish the constitution  
+d) Run the checklist
 
-**Answer:** c) Write specification
+**Answer:** c) Establish the constitution
 
 ---
 
 ### Question 2 (True/False)
-SpecKit's `/testgen` command generates tests from the specification, not from the code.
+SpecKit's `/speckit.tasks` command generates actionable work items from the approved plan.
 
 **Answer:** True
 
@@ -502,19 +506,19 @@ SpecKit's `/testgen` command generates tests from the specification, not from th
 ### Question 3 (Short Answer)
 Name one SpecKit command and its purpose.
 
-**Answer:** Examples: `/specify` (create specification), `/implement` (generate code), `/testgen` (generate tests), `/review` (review code), `/autofix` (fix issues), `/trace` (trace to spec), `/policyguard` (check policies). (Accept any one)
+**Answer:** Examples: `/speckit.constitution` (define guardrails), `/speckit.specify` (create specification), `/speckit.plan` (derive implementation plan), `/speckit.tasks` (break work into tasks), `/speckit.implement` (generate code), `/speckit.clarify` (surface questions), `/speckit.analyze` (map outputs back to specs), `/speckit.checklist` (run policy checks). (Accept any one)
 
 ---
 
 ### Question 4 (Multiple Choice)
 Which command checks code against security and policy rules?
 
-a) `/review`  
-b) `/policyguard`  
-c) `/trace`  
-d) `/autofix`
+a) `/speckit.implement`  
+b) `/speckit.checklist`  
+c) `/speckit.analyze`  
+d) `/speckit.clarify`
 
-**Answer:** b) `/policyguard`
+**Answer:** b) `/speckit.checklist`
 
 ---
 
@@ -528,18 +532,18 @@ Give one benefit of Spec-Driven Development.
 ## One-Page Cheat Sheet
 
 ### Spec-Driven Development
-- **Definition:** Write specs, AI generates implementation and tests
-- **Workflow:** Specify → Implement → Test → Review → Fix → Policy Check → Trace
+- **Definition:** Establish a constitution, capture specifications, and let AI plan, implement, and validate.
+- **Workflow:** Constitution → Specify → Plan → Tasks → Implement → Clarify → Analyze → Checklist
 
 ### SpecKit Commands
-- **`/specify`:** Create or update specification
-- **`/extract`:** Extract spec from existing code
-- **`/implement`:** Generate code from specification
-- **`/autofix`:** Automatically fix issues
-- **`/review`:** Review code against specification
-- **`/testgen`:** Generate tests from specification
-- **`/trace`:** Trace code back to specification
-- **`/policyguard`:** Check against security and policy rules
+- **`/speckit.constitution`:** Define mission, guardrails, and success criteria
+- **`/speckit.specify`:** Create or update specifications
+- **`/speckit.plan`:** Derive implementation strategy and dependencies
+- **`/speckit.tasks`:** Break work into actionable tasks
+- **`/speckit.implement`:** Generate code that satisfies the specification
+- **`/speckit.clarify`:** Surface open questions and assumptions
+- **`/speckit.analyze`:** Map code, tests, and logs back to the specification
+- **`/speckit.checklist`:** Validate against policy and quality checklists
 
 ### Benefits
 - 50-70% faster development
@@ -563,9 +567,12 @@ Give one benefit of Spec-Driven Development.
 ## Phrases & Prompts That Work
 
 **When using SpecKit:**
-- "`/specify function_name` to create a specification"
-- "`/implement function_name` to generate code from spec"
-- "`/testgen function_name` to generate tests"
+- "`/speckit.constitution initiative` to set mission and guardrails"
+- "`/speckit.specify function_name` to capture the specification"
+- "`/speckit.plan function_name` to derive the implementation strategy"
+- "`/speckit.tasks function_name` to break work into deliverable tasks"
+- "`/speckit.implement function_name` to generate code from the specification"
+- "`/speckit.checklist function_name` to verify policy and quality compliance"
 
 **When writing specifications:**
 - "Be specific: include inputs, outputs, rules, error handling, examples"
@@ -581,7 +588,7 @@ Give one benefit of Spec-Driven Development.
 
 ⚠️ **Red Flags Checklist:**
 - [ ] Always review AI-generated code, especially for financial calculations (payroll, tax)
-- [ ] Use `/policyguard` to check security and compliance
+- [ ] Use `/speckit.checklist` to check security and compliance
 - [ ] Verify business logic matches requirements (AI may misunderstand domain rules)
 - [ ] Test AI-generated code thoroughly before production deployment
 - [ ] Maintain audit trail of specifications and generated code

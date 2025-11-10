@@ -6,10 +6,6 @@ Access at https://gemini.google/overview/video-generation/ or via [Gemini AI Stu
 
 Google Veo 3 (like Runway ML, Pika Labs, or Stable Video Diffusion) responds to highly descriptive, cinematic prompts. The more structured, visual, and contextual your input, the closer the output matches your creative vision. Veo 3 delivers best-in-class quality, excelling in physics, realism, and prompt adherence, while also generating synchronized audio including sound effects, ambient noise, and dialogue natively.
 
-Note: This is bonus material, due to high cost of the model **this tutor in not covered in the Panaversity Certification Exams**:
-
-https://docs.google.com/document/d/1BygAckkfc_NFQnTfEM6qqUvPdlIHpNItmRtvfRMGp38/edit?usp=sharing
-
 ---
 
 ## Core Principles
