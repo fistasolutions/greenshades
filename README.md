@@ -1,5 +1,7 @@
 # Greenshades AI Learning Hub
 
+<img src="stats.jpg" alt="llm_share" width="300"/>
+
 ## 🚀 Transforming Payroll Excellence Through AI-First Innovation
 
 **Greenshades is not just adopting AI—we're leading the industry transformation.**
