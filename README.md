@@ -501,8 +501,10 @@ Every example, every use case, every prompt is tailored to Greenshades:
 #### 2. **Comprehensive Coverage**
 - **100+ Lessons:** From AI basics to expert-level mastery
 - **8-Week Curriculum:** Structured learning path
-- **7 Specialized Modules:** Prompt engineering, code generation, PRD creation, and more
+- **9 Specialized Modules:** Prompt engineering, code generation, PRD creation, hackathons, dashboards, and more
 - **Real-World Projects:** Three complete implementations
+- **Hackathon Program:** Complete program for all 8 departments
+- **Productivity Dashboards:** Real-time tracking and measurement
 
 #### 3. **Production-Ready Content**
 - Real prompts you can use immediately
