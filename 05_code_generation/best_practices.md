@@ -125,10 +125,9 @@ def register_user(data):
 #### ❌ **Don't: Try to Do Everything at Once**
 ```javascript
 // Bad: Overwhelming requirements
-// Create a complete e-commerce platform with user management,
-// product catalog, shopping cart, payment processing, order management,
-// inventory tracking, reporting, analytics, mobile app, admin panel,
-// and all the security features
+// Create a complete payroll processing platform with employee management,
+// payroll batches, tax calculations, compliance checking, reporting, analytics,
+// integrations, mobile app, admin panel, and all the security features
 ```
 
 ### 5. **Maintain Code Quality**

@@ -1019,11 +1019,11 @@ Start broad and refine:
 Start with high-level architecture and let AI fill in the details.
 
 ```
-Create a microservices architecture for an e-commerce platform with:
-- User service (authentication, profiles)
-- Product service (catalog, inventory)
-- Order service (checkout, payments)
-- Notification service (emails, SMS)
+Create a microservices architecture for a payroll processing platform with:
+- Employee service (authentication, employee profiles)
+- Payroll service (payroll batches, calculations)
+- Tax service (tax calculations, compliance)
+- Notification service (payroll notifications, tax alerts)
 - API Gateway for routing and rate limiting
 ```
 
@@ -1503,7 +1503,7 @@ For comprehensive Claude Code tutorial with detailed examples, workflows, and ca
 4. **Calculator**: Build a scientific calculator with AI assistance
 
 #### **Intermediate Level**
-1. **E-commerce Site**: Full-stack online store
+1. **Payroll Processing System**: Full-stack payroll and tax management platform
 2. **Social Media App**: Basic social networking platform
 3. **Data Analytics Dashboard**: Business intelligence tool
 4. **Chat Application**: Real-time messaging system

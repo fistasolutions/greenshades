@@ -22,10 +22,10 @@ This 8-week pre-hackathon program prepares Engineering teams for the AI Agentic 
 - Complete foundational training
 
 ### Required Curriculum Modules
-- ✅ `00_introduction_to_ai_and_agentic_ai/` (all 6 lessons)
-- ✅ `01_ai_vs_ai_assisted_vs_ai_driven/` (all 4 lessons)
-- ✅ `03_mcp_and_specdriven_development/00_what_is_mcp.md`
-- ✅ `03_mcp_and_specdriven_development/01_why_mcp_for_ai_agents.md`
+- ✅ `../../../00_ai_awareness_and_strategy/00_introduction_to_ai_and_agentic_ai/` (all 6 lessons)
+- ✅ `../../../00_ai_awareness_and_strategy/01_ai_vs_ai_assisted_vs_ai_driven/` (all 4 lessons)
+- ✅ `../../../00_ai_awareness_and_strategy/03_mcp_and_specdriven_development/00_what_is_mcp.md`
+- ✅ `../../../00_ai_awareness_and_strategy/03_mcp_and_specdriven_development/01_why_mcp_for_ai_agents.md`
 
 ### Hands-On Exercises
 
@@ -66,9 +66,9 @@ This 8-week pre-hackathon program prepares Engineering teams for the AI Agentic 
 - Achieve proficiency with all three tools
 
 ### Required Curriculum Modules
-- ✅ `05_code_generation/readme.md` (complete guide)
-- ✅ `05_code_generation/claudecodetutorial.md` (Claude Code deep dive)
-- ✅ `01_prompt_engineering_for_everyone/readme.md` (prompt engineering)
+- ✅ `../../../05_code_generation/readme.md` (complete guide)
+- ✅ `../../../05_code_generation/claudecodetutorial.md` (Claude Code deep dive)
+- ✅ `../../../01_prompt_engineering_for_everyone/readme.md` (prompt engineering)
 
 ### Hands-On Exercises
 
@@ -109,10 +109,10 @@ This 8-week pre-hackathon program prepares Engineering teams for the AI Agentic 
 - Build confidence with real-world scenarios
 
 ### Required Curriculum Modules
-- ✅ `02_ai_in_greenshades_ecosystem/` (all use cases)
-- ✅ `03_mcp_and_specdriven_development/02_specdriven_development_basics.md`
-- ✅ `03_mcp_and_specdriven_development/04_case_study_payroll_analyzer_agent.md`
-- ✅ `05_productivity_10x_framework/02_role_based_productivity_examples.md`
+- ✅ `../../../00_ai_awareness_and_strategy/02_ai_in_greenshades_ecosystem/` (all use cases)
+- ✅ `../../../00_ai_awareness_and_strategy/03_mcp_and_specdriven_development/02_specdriven_development_basics.md`
+- ✅ `../../../00_ai_awareness_and_strategy/03_mcp_and_specdriven_development/04_case_study_payroll_analyzer_agent.md`
+- ✅ `../../../00_ai_awareness_and_strategy/05_productivity_10x_framework/02_role_based_productivity_examples.md`
 
 ### Hands-On Exercises
 
@@ -270,7 +270,7 @@ This 8-week pre-hackathon program prepares Engineering teams for the AI Agentic 
 - [ ] Social: Improved skill development confidence by 40%+ (measured via surveys)
 - [ ] Governance: 100% of milestones including security and compliance (compliance metric)
 
-**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+**Reference:** See `../../../00_ai_awareness_and_strategy/04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
 
 ---
 
@@ -343,7 +343,7 @@ This 8-week pre-hackathon program prepares Engineering teams for the AI Agentic 
 - Each milestone completion compounds productivity improvements
 - Milestones become foundation for sustainable 10× productivity
 
-**Reference:** See `05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
+**Reference:** See `../../../00_ai_awareness_and_strategy/05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
 
 **Last Updated:** 2025  
 **Version:** 1.0

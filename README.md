@@ -167,7 +167,7 @@ Master AI-powered Product Requirements Document creation with ChatPRD, including
 - GitHub integration and hooks
 - **Three complete real-world projects:**
   - RAG Chatbot Application
-  - E-Commerce Data Analysis & Dashboard
+  - Payroll Data Analysis & Dashboard
   - Figma Design to Next.js App
 
 #### 6. UI/UX Generation

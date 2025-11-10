@@ -250,14 +250,14 @@ This comprehensive hackathon program provides department-specific AI Agentic AI 
 ## Next Steps
 
 1. **Review Department-Specific Guides:**
-   - [Engineering Hackathon Guide](./Engineering_Hackathon_Guide.md)
-   - [QA Hackathon Guide](./QA_Hackathon_Guide.md)
-   - [Product Hackathon Guide](./Product_Hackathon_Guide.md)
-   - [HR Hackathon Guide](./HR_Hackathon_Guide.md)
-   - [Finance Hackathon Guide](./Finance_Hackathon_Guide.md)
-   - [Sales Hackathon Guide](./Sales_Hackathon_Guide.md)
-   - [Support Hackathon Guide](./Support_Hackathon_Guide.md)
-   - [Leadership Hackathon Guide](./Leadership_Hackathon_Guide.md)
+   - [Engineering Hackathon Guide](./02_departments/engineering/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/engineering/pre_hackathon_milestones.md)
+   - [QA Hackathon Guide](./02_departments/qa/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/qa/pre_hackathon_milestones.md)
+   - [Product Hackathon Guide](./02_departments/product/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/product/pre_hackathon_milestones.md)
+   - [HR Hackathon Guide](./02_departments/hr/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/hr/pre_hackathon_milestones.md)
+   - [Finance Hackathon Guide](./02_departments/finance/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/finance/pre_hackathon_milestones.md)
+   - [Sales Hackathon Guide](./02_departments/sales/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/sales/pre_hackathon_milestones.md)
+   - [Support Hackathon Guide](./02_departments/support/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/support/pre_hackathon_milestones.md)
+   - [Leadership Hackathon Guide](./02_departments/leadership/hackathon_guide.md) | [Pre-Hackathon Milestones](./02_departments/leadership/pre_hackathon_milestones.md)
 
 2. **Start Pre-Hackathon Milestones:**
    - Follow department-specific milestone plan
@@ -302,7 +302,7 @@ This comprehensive hackathon program provides department-specific AI Agentic AI 
 - [ ] Social: Improved innovation participation from hackathons by 40%+ across all departments (measured via surveys)
 - [ ] Governance: 100% of hackathons following security and compliance guidelines across all departments (compliance metric)
 
-**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+**Reference:** See `../00_ai_awareness_and_strategy/04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
 
 ---
 
@@ -375,7 +375,7 @@ This comprehensive hackathon program provides department-specific AI Agentic AI 
 - Each structured hackathon compounds productivity improvements across all departments
 - Master overview becomes foundation for sustainable 10× productivity
 
-**Reference:** See `05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
+**Reference:** See `../00_ai_awareness_and_strategy/05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
 
 ---
 

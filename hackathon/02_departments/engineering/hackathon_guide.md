@@ -378,7 +378,7 @@ Build an AI agent that modernizes legacy code by refactoring to modern patterns,
 5. **Participate in Hackathon** (Days 1-2)
 6. **Present and Win!** (Day 2)
 
-**Ready to start?** Begin with [Engineering Pre-Hackathon Milestones](./Engineering_Pre_Hackathon_Milestones.md)!
+**Ready to start?** Begin with [Engineering Pre-Hackathon Milestones](./pre_hackathon_milestones.md)!
 
 ---
 
@@ -409,7 +409,7 @@ Build an AI agent that modernizes legacy code by refactoring to modern patterns,
 - [ ] Social: Improved innovation participation from hackathons by 40%+ (measured via surveys)
 - [ ] Governance: 100% of hackathons following security and compliance guidelines (compliance metric)
 
-**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+**Reference:** See `../../../00_ai_awareness_and_strategy/04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
 
 ---
 
@@ -482,7 +482,7 @@ Build an AI agent that modernizes legacy code by refactoring to modern patterns,
 - Each structured hackathon compounds productivity improvements
 - Hackathon guide becomes foundation for sustainable 10× productivity
 
-**Reference:** See `05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
+**Reference:** See `../../../00_ai_awareness_and_strategy/05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
 
 **Last Updated:** 2025  
 **Version:** 1.0

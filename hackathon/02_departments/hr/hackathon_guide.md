@@ -96,7 +96,7 @@ Build innovative AI-powered HR solutions that automate recruitment, enhance empl
 
 ---
 
-**Ready to start?** Begin with [HR Pre-Hackathon Milestones](./HR_Pre_Hackathon_Milestones.md)!
+**Ready to start?** Begin with [HR Pre-Hackathon Milestones](./pre_hackathon_milestones.md)!
 
 ---
 
@@ -125,7 +125,7 @@ Build innovative AI-powered HR solutions that automate recruitment, enhance empl
 - [ ] Social: Improved innovation participation from hackathons by 40%+ (measured via surveys)
 - [ ] Governance: 100% of hackathons following security and compliance guidelines (compliance metric)
 
-**Reference:** See `04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
+**Reference:** See `../../../00_ai_awareness_and_strategy/04_ai_ethics_and_security_basics/` for detailed ESG guidelines.
 
 ---
 
@@ -196,7 +196,7 @@ Build innovative AI-powered HR solutions that automate recruitment, enhance empl
 - Each structured hackathon compounds productivity improvements
 - Hackathon guide becomes foundation for sustainable 10× productivity
 
-**Reference:** See `05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
+**Reference:** See `../../../00_ai_awareness_and_strategy/05_productivity_10x_framework/` for detailed productivity guidelines and metrics.
 
 ---
 

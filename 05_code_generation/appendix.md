@@ -410,11 +410,11 @@ def endpoint_function():
 
 #### **System Design**
 ```python
-# Design a microservices architecture for an e-commerce platform:
-# - User service for authentication and profiles
-# - Product service for catalog and inventory
-# - Order service for checkout and payments
-# - Notification service for emails and alerts
+# Design a microservices architecture for a payroll processing platform:
+# - Employee service for authentication and employee profiles
+# - Payroll service for payroll batches and calculations
+# - Tax service for tax calculations and compliance
+# - Notification service for payroll and tax alerts
 # - API Gateway for routing and rate limiting
 # - Service discovery and configuration management
 # - Distributed logging and monitoring

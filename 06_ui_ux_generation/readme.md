@@ -69,12 +69,12 @@ The most effective way to use Visily.ai is through detailed user-centered descri
 
 **Basic Example:**
 ```
-Create a wireframe for a mobile e-commerce app homepage that includes:
+Create a wireframe for a mobile employee self-service app homepage that includes:
 - Hero section with featured product
 - Product categories navigation
 - Search functionality
 - User account access
-- Shopping cart icon
+- Pay stub access icon
 ```
 
 **Advanced Example:**
@@ -304,7 +304,7 @@ Create a website design
 
 **Good:**
 ```
-Create a responsive e-commerce website design for a sustainable fashion brand targeting environmentally conscious millennials (ages 25-35) with:
+Create a responsive employee self-service portal design for Avocado payroll platform targeting employees (ages 25-55) with:
 - Clean, minimalist aesthetic reflecting eco-friendly values
 - Product showcase with sustainability metrics
 - Easy checkout process with carbon footprint calculator
@@ -389,15 +389,15 @@ Create a responsive website design with:
 - Performance optimization (Core Web Vitals)
 ```
 
-#### **E-commerce Design**
+#### **Payroll Portal Design**
 ```
-Design an e-commerce website optimized for conversion:
-- Clear product hierarchy and categorization
-- Trust signals (reviews, security badges, guarantees)
-- Streamlined checkout process (max 3 steps)
-- Product comparison and wishlist functionality
-- Search with filters and sorting options
-- Mobile-optimized shopping cart
+Design an employee self-service portal optimized for ease of use:
+- Clear navigation for pay stubs, tax forms, and benefits
+- Trust signals (security badges, compliance indicators)
+- Streamlined pay stub access (max 2 clicks)
+- Payroll history and year-to-date summaries
+- Search with filters for pay periods and tax forms
+- Mobile-optimized pay stub viewing
 - A/B testing considerations for key elements
 ```
 

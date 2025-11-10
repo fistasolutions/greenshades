@@ -846,17 +846,17 @@ Now create create_product function with similar validation for:
 
 **Step 1: Basic Functionality**
 ```
-Create a function to calculate total price of items in a shopping cart
+Create a function to calculate total gross pay for employees in a payroll batch
 ```
 
 **Step 2: Add Features**
 ```
-Add discount calculation (10% if total > $100, 20% if total > $500)
+Add tax deduction calculation (federal tax if gross > $500, state tax if applicable)
 ```
 
 **Step 3: Add Error Handling**
 ```
-Add validation for negative prices, invalid quantities, and missing items
+Add validation for negative pay amounts, invalid employee IDs, and missing tax information
 ```
 
 **Step 4: Add Documentation**
@@ -993,10 +993,10 @@ Features:
 
 **Prompt:**
 ```
-Create a Spring Boot REST API for an e-commerce system with:
-- Product CRUD operations
+Create a Spring Boot REST API for a payroll processing system with:
+- Employee CRUD operations
 - User authentication with Spring Security
-- JPA entities and repositories
+- JPA entities and repositories for employees, payroll batches, and tax records
 - DTOs for request/response
 - Exception handling with @ControllerAdvice
 - Validation with Bean Validation
@@ -1978,7 +1978,7 @@ Add a '+ NEW CHAT' button to the left sidebar above the courses section. When cl
 - Match the styling of existing sections (Courses, Try asking) - same font size, color, and uppercase formatting
 ```
 
-### Project 2: E-Commerce Data Analysis & Dashboard
+### Project 2: Payroll Data Analysis & Dashboard
 
 Refactoring Jupyter notebooks and creating interactive Streamlit dashboards.
 
@@ -1988,7 +1988,7 @@ Refactoring Jupyter notebooks and creating interactive Streamlit dashboards.
 - Data Analysis: Python/Pandas
 - Visualization: Plotly
 - Dashboard: Streamlit
-- Data: E-commerce sales data
+- Data: Payroll processing data (employee pay, tax calculations, processing times)
 
 #### Getting Started
 
@@ -2002,13 +2002,13 @@ Refactoring Jupyter notebooks and creating interactive Streamlit dashboards.
    - Starting notebook: `EDA.ipynb`
    - Refactored notebook: `EDA_Refactored.ipynb`
    - Dashboard: `dashboard.py`
-   - Data folder with e-commerce data
+   - Data folder with payroll processing data
 
 #### Notebook Refactoring Workflow
 
 **Prompt:**
 ```
-The @EDA.ipynb contains exploratory data analysis on e-commerce data in @ecommerce_data, focusing on sales metrics for 2023. Keep the same analysis and graphs, and improve the structure and documentation of the notebook.
+The @EDA.ipynb contains exploratory data analysis on payroll processing data in @payroll_data, focusing on payroll metrics for 2023. Keep the same analysis and graphs, and improve the structure and documentation of the notebook.
 
 Review the existing notebook and identify:
 - What business metrics are currently calculated
@@ -2318,7 +2318,7 @@ notify-send "Claude Code" "Subagent task completed"
 - Starting codebase: https://github.com/https-deeplearning-ai/starting-ragchatbot-codebase.git
 - Final state: https://github.com/https-deeplearning-ai/ragchatbot-codebase.git
 
-**Project 2: E-Commerce Analysis**
+**Project 2: Payroll Data Analysis**
 - Lesson files: https://github.com/https-deeplearning-ai/sc-claude-code-files/tree/main/lesson7_files
 
 **Project 3: Figma Dashboard**
@@ -2463,7 +2463,7 @@ By completing this tutorial, you should be able to:
 
 1. **Complete All Three Projects:**
    - RAG Chatbot (Lessons 2-6)
-   - E-Commerce Dashboard (Lesson 7)
+   - Payroll Data Analysis Dashboard (Lesson 7)
    - Figma to Next.js App (Lesson 8)
 
 2. **Build Your Own Projects:**

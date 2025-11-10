@@ -738,8 +738,8 @@ const crypto = require('crypto');
 
 **Prompt:**
 ```java
-// Create a Spring Boot REST API for an e-commerce system with:
-// 1. RESTful endpoints for products, orders, and users
+// Create a Spring Boot REST API for a payroll processing system with:
+// 1. RESTful endpoints for employees, payroll batches, and tax records
 // 2. JPA entities with proper relationships
 // 3. Service layer with business logic
 // 4. Repository layer with custom queries
@@ -753,10 +753,10 @@ const crypto = require('crypto');
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableWebSecurity
-@OpenAPIDefinition(info = @Info(title = "E-commerce API", version = "1.0"))
-public class ECommerceApplication {
+@OpenAPIDefinition(info = @Info(title = "Payroll Processing API", version = "1.0"))
+public class PayrollApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ECommerceApplication.class, args);
+        SpringApplication.run(PayrollApplication.class, args);
     }
 }
 
@@ -861,17 +861,17 @@ import (
 
 **Prompt:**
 ```sql
--- Create a comprehensive database schema for an e-commerce platform:
--- 1. Users table with authentication fields
--- 2. Products table with categories and variants
--- 3. Orders table with order items
--- 4. Payments table with transaction history
--- 5. Reviews and ratings system
--- 6. Inventory management
+-- Create a comprehensive database schema for a payroll processing platform:
+-- 1. Employees table with authentication and profile fields
+-- 2. Payroll batches table with processing status
+-- 3. Payroll records table with pay calculations
+-- 4. Tax records table with tax calculations and compliance
+-- 5. Deductions table for benefits and other deductions
+-- 6. Tax forms table for W-2, 941, and state forms
 -- 7. Proper indexing for performance
 -- 8. Foreign key constraints
 -- 9. Triggers for data consistency
--- 10. Views for common queries
+-- 10. Views for common payroll and tax queries
 
 -- AI will generate complete schema
 ```
